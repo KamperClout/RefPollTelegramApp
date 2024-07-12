@@ -26,6 +26,7 @@
                     <div class="">
                         <input type="password" name="password" placeholder="Пароль" required />
                     </div>
+                    <input class="button bg-blue-variant-yellow" type="submit" value="Сережа, это кнопка, честно">
                 </form>
             </div>
         </div>

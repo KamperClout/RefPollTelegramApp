@@ -21,7 +21,8 @@ module.exports = {
                     'gray-text': '#A0A0A0',
                     'blue-button': '#0047FF',
                     'form': '#ECECEC',
-                    'form-back': '#F3F3F3'
+                    'form-back': '#F3F3F3',
+                    'yellow': '#FEE55A'
                 }
             },
             spacing: {
