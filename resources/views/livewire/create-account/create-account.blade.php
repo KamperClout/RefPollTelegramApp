@@ -1,3 +1,3 @@
-<div>
-    {{-- In work, do what you enjoy. --}}
+<div class="text-blue-variant-gray-text ">
+    hjhtrgyergt
 </div>
