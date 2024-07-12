@@ -32,6 +32,9 @@ class UserFactory extends Factory
             'phone_verified_at' => now(),
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
+            'experience' => $this->faker->numberBetween(0, 1000),
+            'level' => $this->faker->numberBetween(1, 10),
+            'payments' => $this->faker->randomFloat(2, 0, 10000),
         ];
     }
 
