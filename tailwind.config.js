@@ -1,17 +1,34 @@
-/** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   theme: {
+//     screens: {
+//         'Android': '360px',
+//     },
+//       colors: {
+//         'blue-variant': {
+//             'main-font': '#E7EAF2',
+//             'font': '#B1B4BE',
+//             'button': '#EFEFEF',
+//             'gray-text': '#0047FF',
+//         }
+//     }
+//   },
+// }
+//
 module.exports = {
-  theme: {
-    screens: {
-        'Android': '360px',
+    content: [
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
+    theme: {
+        extend: {
+            colors: {
+                'blue-variant-main-font': '#E7EAF2',
+                'blue-variant-font': '#B1B4BE',
+                'blue-variant-button': '#EFEFEF',
+                'blue-variant-gray-text': '#0047FF',
+            },
+        },
     },
-      colors: {
-        'blue-variant': {
-            'main-font': '#E7EAF2',
-            'font': '#B1B4BE',
-            'button': '#EFEFEF',
-            'gray-text': '#A0A0A0',
-        }
-    }
-  },
+    plugins: [],
 }
-
