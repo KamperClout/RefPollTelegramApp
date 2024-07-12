@@ -1,9 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [],
+module.exports = {
   theme: {
-    extend: {},
+    screens: {
+        'Android': '360px',
+    },
+      colors: {
+        'blue-variant': {
+            'main-font': '#E7EAF2',
+            'font': '#B1B4BE',
+            'button': '#EFEFEF',
+            'gray-text': '#A0A0A0',
+        }
+    }
   },
-  plugins: [],
 }
 
