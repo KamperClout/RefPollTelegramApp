@@ -1,6 +1,5 @@
 <?php
 
-use App\Livewire\Dashboard\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,18 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('dashboard');
-//});
-
 Route::get('/', function () {
     return view('livewire.dashboard.dashboard');
 });
 
-Route::get('/create-accaunt', function () {
-    return view('livewire.create-accaunt.create-accaunt');
+Route::get('/create-account', function () {
+    return view('livewire.create-account.create-account');
 });
 
-Route::get('/entrance-accaunt', function () {
-    return view('livewire.entrance-accaunt.entrance-accaunt');
+Route::get('/entrance-account', function () {
+    return view('livewire.entrance-account.entrance-account');
 });
