@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Livewire\EntranceAccount\EntranceAccount;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('livewire.dashboard.dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::get('/create-account', function () {
-    return view('livewire.create-account.create-account');
-});
+Route::middleware(['guest'])->group(function () {
+    Route::get('/create-account', function () {
+        return view('livewire.create-account.create-account');
+    });
 
-Route::get('/entrance-account', function () {
-    return view('livewire.entrance-account.entrance-account');
+    Route::get('/login', function () {
+        return view('livewire.entrance-account.entrance-account');
+    })->name('login');
 });
