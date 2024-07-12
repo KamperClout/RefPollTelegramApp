@@ -20,24 +20,34 @@ module.exports = {
                     'button': '#EFEFEF',
                     'gray-text': '#A0A0A0',
                     'blue-button': '#0047FF',
+                    'form': '#ECECEC',
+                    'form-back': '#F3F3F3'
                 }
             },
             spacing: {
                 '8': '8px',
+                '15': '15px',
                 '16': '16px',
-                '70': '70px',
+                '24': '24px',
+                '40':'40px',
+                '66': '66px',
                 '82':'82px',
-                '163':'163px',
-                '585': '585px'
+                '86': '86.14px',
+                '178': '178.26px',
+                '200':'200px',
+                '606': '606px'
+
             },
             borderRadius: {
-                'xl': '24px',
-                '2xl': '36px',
-                '3xl': '44px',
+                '12':'12px',
+                '20':'20px',
+                '28': '28px',
+                '36': '36px',
+                '44': '44px',
 
             },
             fontFamily: {
-                'Manrope': ['Manrope']
+                Manrope: ['"Manrope"', "sans-serif"],
             }
         },
     },
