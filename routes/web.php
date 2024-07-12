@@ -15,18 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('livewire.entrance-account.entrance-account');
-})->name('login');
-
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::get('/create-account', function () {
-    return view('livewire.create-account.create-account');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/create-account', function () {
+        return view('livewire.create-account.create-account');
+    });
+
+    Route::get('/login', function () {
+        return view('livewire.entrance-account.entrance-account');
+    })->name('login');
 });
