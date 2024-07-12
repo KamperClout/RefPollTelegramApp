@@ -22,6 +22,23 @@ module.exports = {
                     'blue-button': '#0047FF',
                 }
             },
+            spacing: {
+                '8': '8px',
+                '16': '16px',
+                '70': '70px',
+                '82':'82px',
+                '163':'163px',
+                '585': '585px'
+            },
+            borderRadius: {
+                'xl': '24px',
+                '2xl': '36px',
+                '3xl': '44px',
+
+            },
+            fontFamily: {
+                'Manrope': ['Manrope']
+            }
         },
     },
     plugins: [],
