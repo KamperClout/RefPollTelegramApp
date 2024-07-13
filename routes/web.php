@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Livewire\CreateAccount\CreateAccount;
+use App\Livewire\Dashboard\Dashboard;
 use App\Livewire\EntranceAccount\EntranceAccount;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
+//    Route::get('/', function () {
+//        return view('dashboard');
+//    })->name('dashboard');
+    Route::get('/',Dashboard::class)->name('dashboard');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

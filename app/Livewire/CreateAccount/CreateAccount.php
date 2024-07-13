@@ -3,6 +3,7 @@
 namespace App\Livewire\CreateAccount;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -19,7 +20,7 @@ class CreateAccount extends Component
     public $password;
     public $password_confirmation;
     #[Rule('nullable')]
-    public $is_leave;
+    public $is_leave = false;
 
     public function store()
     {
@@ -31,7 +32,7 @@ class CreateAccount extends Component
         $this->patronymic = $parts[2] ?? '';
 
         try {
-            User::create([
+            $user = User::create([
                 'name' => $this->name,
                 'surname' => $this->surname,
                 'patronymic' => $this->patronymic,
@@ -40,11 +41,27 @@ class CreateAccount extends Component
                 'password' => Hash::make($this->password),
             ]);
 
+            if ($this->is_leave) {
+                return $this->findPhoneAndLogin($this->phone);
+            }
+
             session()->flash('success', 'Пользователь успешно создан.');
 
-            $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation');
+            $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation', 'is_leave');
         } catch (\Exception $e) {
             session()->flash('error', 'Ошибка при создании пользователя: ' . $e->getMessage());
+        }
+    }
+
+    public function findPhoneAndLogin($phone)
+    {
+        $user = User::where('phone', $phone)->first();
+
+        if ($user) {
+            Auth::login($user);
+            return redirect()->intended('dashboard');
+        } else {
+            session()->flash('error', 'Не удалось найти пользователя с данным номером телефона');
         }
     }
 
