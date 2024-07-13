@@ -59,7 +59,7 @@ class CreateAccount extends Component
 
         if ($user) {
             Auth::login($user);
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         } else {
             session()->flash('error', 'Не удалось найти пользователя с данным номером телефона');
         }
