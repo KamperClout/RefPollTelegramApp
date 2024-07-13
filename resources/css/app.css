@@ -10,3 +10,30 @@
         src: url('/fonts/Manrope.woff2') format('woff2');
     }
 }
+/*@layer base {*/
+/*    @font-face {*/
+/*        font-family: 'Montserrat';*/
+/*        font-style: normal;*/
+/*        font-weight: 400;*/
+/*        src: url('/fonts/Montserrat.woff2') format('woff2');*/
+/*    }*/
+/*}*/
+
+input {
+    @apply bg-sc-form-back text-sc-gray-text rounded-12 h-40 pl-15;
+}
+.form-span {
+    @apply text-sc-gray-text mb-8;
+}
+.form-div {
+    @apply flex flex-col mt-16 ml-8 mr-8;
+}
+.button {
+    @apply bg-sc-yellow mt-20 rounded-full;
+}
+.checkbox {
+    @apply flex flex-row bg-white mt-3;
+}
+.check-input {
+    @apply  bg-sc-check ml-117;
+}
