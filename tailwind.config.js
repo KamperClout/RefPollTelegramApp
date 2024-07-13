@@ -5,6 +5,11 @@ module.exports = {
         './resources/**/*.vue',
     ],
     theme: {
+        fontSize: {
+            sm: ['12px','14.63px'],
+            base: ['16px', '14.4px'],
+            lg: ['24px', '21.6px']
+        },
         screens:{
             'Android': '360px',
         },
@@ -48,7 +53,8 @@ module.exports = {
                 '44': '44px',
             },
             fontFamily: {
-                Montserrat: [' "Montserrat"', "sans-serif"]
+                Montserrat: [' "Montserrat-Medium"'],
+                MontserratBold: [' "Montserrat-SemiBold"'],
             },
         },
     },
