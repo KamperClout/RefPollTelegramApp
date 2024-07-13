@@ -1,7 +1,3 @@
-//     screens: {
-//         'Android': '360px',
-//     },
-
 module.exports = {
     content: [
         './resources/**/*.blade.php',
@@ -52,8 +48,7 @@ module.exports = {
                 '44': '44px',
             },
             fontFamily: {
-                Manrope: ['"Manrope"', "sans-serif"],
-                // Montserrat: [' "Montserrat"', "sans-serif"]
+                Montserrat: [' "Montserrat"', "sans-serif"]
             },
         },
     },

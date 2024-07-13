@@ -1,7 +1,7 @@
-<div class="bg-sc-main-font pt-66 pr-8 pb-66 pl-8 max-w-screen-Android rounded-36 font-Manrope">
+<div class="bg-sc-main-font pt-66 pr-8 pb-66 pl-8 max-w-screen-Android rounded-36 font-Montserrat">
     <div class="bg-white rounded-28 ">
         <div class="flex flex-col border-2 border-sc-border">
-            <div class="pt-24 pl-24 pr-200">
+            <div class="flex flex-col mt-24 ml-24">
                 <span class="text-black"> Регистрация </span>
                 <span class="text-black"> аккаунта </span>
             </div>
