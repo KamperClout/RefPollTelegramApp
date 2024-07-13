@@ -13,27 +13,39 @@ class CreateAccount extends Component
     public $fio;
     #[Rule('required')]
     public $region;
-    #[Rule('required')]
+    #[Rule('required|string|unique:users,phone')]
     public $phone;
-    #[Rule('required')]
+    #[Rule('required|string|min:8|confirmed')]
     public $password;
-    #[Rule('required')]
     public $password_confirmation;
+    #[Rule('nullable')]
+    public $is_leave;
 
     public function store()
     {
         $this->validate();
-        User::create([
-            'name' => $this->fio,
-            'surname' => $this->fio,
-            'patronymic' => $this->fio,
-            'region' => $this->region,
-            'phone' => $this->phone,
-            'password' => Hash::make($this->password),
-        ]);
-        session()->flash('success', 'Post created successfully.');
 
-        $this->reset('fio','region','phone','password','password_confirmation');
+        $parts = explode(' ', $this->fio, 3);
+        $this->surname = $parts[0] ?? '';
+        $this->name = $parts[1] ?? '';
+        $this->patronymic = $parts[2] ?? '';
+
+        try {
+            User::create([
+                'name' => $this->name,
+                'surname' => $this->surname,
+                'patronymic' => $this->patronymic,
+                'region' => $this->region,
+                'phone' => $this->phone,
+                'password' => Hash::make($this->password),
+            ]);
+
+            session()->flash('success', 'Пользователь успешно создан.');
+
+            $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation');
+        } catch (\Exception $e) {
+            session()->flash('error', 'Ошибка при создании пользователя: ' . $e->getMessage());
+        }
     }
 
     public function render()
