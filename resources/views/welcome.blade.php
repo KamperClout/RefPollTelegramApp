@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('components.layouts.app')
 
 @section('content')
-    <livewire:dashboard />
-    <livewire:create-account />
+    <livewire:dashboard/>
+    <livewire:create-account/>
 @endsection

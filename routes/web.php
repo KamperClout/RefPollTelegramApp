@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Livewire\CreateAccount\CreateAccount;
 use App\Livewire\EntranceAccount\EntranceAccount;
 use Illuminate\Support\Facades\Route;
 
@@ -24,9 +25,10 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/create-account', function () {
-        return view('livewire.create-account.create-account');
-    });
+//    Route::get('/create-account', function () {
+//        return view('livewire.create-account.create-account');
+//    });
+    Route::get('/register',CreateAccount::class)->name('register');
 
     Route::get('/login', function () {
         return view('livewire.entrance-account.entrance-account');
