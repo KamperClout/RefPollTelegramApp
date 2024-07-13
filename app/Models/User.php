@@ -24,8 +24,6 @@ class User extends Authenticatable
         'region',
         'phone',
         'password',
-        'experience',
-        'level',
         'payments',
     ];
 
