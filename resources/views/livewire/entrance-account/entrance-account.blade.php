@@ -26,6 +26,7 @@
                     <input wire:model="password" type="password" class="form-input" name="password" placeholder="Пароль" required />
                     @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
+                <span class="text-sc-check font-Montserrat w-[104px] h-[15px] ml-[208px] mt-[8px] mb-[16px]"> Забыли пароль?</span>
             </div>
             <div class="checkbox">
                 <span for="newsletter">Оставаться в системе</span>
