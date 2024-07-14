@@ -6,8 +6,7 @@
         <p>Всего не оплативших: {{ $unpaidCount }}</p>
     </div>
     <div class="mt-4">
-        <!-- Форма поиска по ФИО -->
-        <input type="text" wire:model="search" placeholder="Поиск по ФИО..." class="p-2 border border-gray-300 rounded-md"/>
+        <input type="text" wire:model.lazy="search" class="border rounded p-2" placeholder=""/>
     </div>
     @foreach($clients as $client)
         @if (!$client->is_payment)
@@ -16,5 +15,4 @@
             </div>
         @endif
     @endforeach
-    {{ $clients->links() }}
 </div>
