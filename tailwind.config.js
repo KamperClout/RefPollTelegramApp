@@ -25,7 +25,8 @@ module.exports = {
                     'yellow': '#FEE55A',
                     'border': '#ECECEC',
                     'check': '#71B670',
-                    'shadow': '#A5ADA9'
+                    'shadow': '#A5ADA9',
+                    'almost-black': "#252838"
                 }
             },
             spacing: {

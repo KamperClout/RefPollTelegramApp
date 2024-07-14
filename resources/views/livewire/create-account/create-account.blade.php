@@ -1,9 +1,11 @@
 <div class="big-div">
     <div class="semi-div">
         <div class="flex flex-col border-[1px] border-sc-border pb-[8px] h-[668px]">
-            <div class="flex flex-col mt-[24px] ml-[24px]">
-                <span class="text-black text-base"> Регистрация </span>
-                <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
+            <div class="flex flex-row">
+                <div class="flex flex-col mt-[24px] ml-[24px]">
+                    <span class="text-black text-base"> Регистрация </span>
+                    <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
+                </div>
             </div>
             @if (session()->has('success'))
                 <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">
@@ -80,3 +82,4 @@
         </div>
     </div>
 </div>
+
