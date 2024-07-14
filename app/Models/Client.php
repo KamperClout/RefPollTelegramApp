@@ -17,6 +17,7 @@ class Client extends Model
         'deposit',
         'debt_amount',
         'phone',
+        'is_payment',
         'user_id',
     ];
 

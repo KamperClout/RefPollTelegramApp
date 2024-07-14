@@ -21,6 +21,12 @@
                             <li><a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 rounded">Dashboard</a></li>
                             <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 rounded">Profile</a></li>
                             <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 rounded">Settings</a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                                    @csrf
+                                    <button type="submit" class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200 rounded">Logout</button>
+                                </form>
+                            </li>
                         </ul>
                     </nav>
                 </div>
