@@ -23,7 +23,7 @@
                         @error('phone') <span class="error">{{ $message }}</span> @enderror
                     </div>
                 </div>
-                <input class="button" type="submit" value="Отправить код по смс">
+                <input onclick="startCountdown()" class="button" type="submit" value="Отправить код по смс">
             </form>
         </div>
     @elseif ($step === 2)
@@ -62,13 +62,15 @@
 </div>
 
 <script>
-    let countdown = 30;
-    let timer = setInterval(() => {
-        countdown--;
-        document.getElementById('countdown-timer').textContent = countdown;
-        if (countdown <= 0) {
-            clearInterval(timer);
-            location.reload();
-        }
-    }, 1000);
+    function startCountdown() {
+        let countdown = 30;
+        let timer = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown-timer').textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                location.reload();
+            }
+        }, 1000);
+    }
 </script>
