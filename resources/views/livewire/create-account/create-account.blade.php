@@ -1,5 +1,5 @@
-<div class="bg-sc-main-font pt-[66px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat">
-    <div class="bg-white rounded-[28px] h-[668px] w-[344px]">
+<div class="big-div">
+    <div class="semi-div">
         <div class="flex flex-col border-[1px] border-sc-border pb-[8px] h-[668px]">
             <div class="flex flex-col mt-[24px] ml-[24px]">
                 <span class="text-black text-base"> Регистрация </span>
@@ -15,31 +15,31 @@
                     {{ session('error') }}
                 </div>
             @endif
-            <form wire:submit="store" class="bg-white ml-8 mr-8 mt-24  ">
-                <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px]">
+            <form wire:submit="store" class="bg-white ml-8 mr-8 mt-24 ">
+                <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px] border-opacity-80">
                     <div class="form-div">
                         <span class="form-span"> Ваше ФИО </span>
-                        <input wire:model="fio" type="text" name="fio" placeholder="Фамилия Имя Отчество*" required/>
+                        <input wire:model="fio" type="text" class="form-input" name="fio" placeholder="Фамилия Имя Отчество*" required/>
                         @error('fio') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-div">
                         <span class="form-span"> Номер телефона </span>
-                        <input wire:model="phone" type="phone" name="phone" placeholder="+7(Номер телефона)" required />
+                        <input wire:model="phone" type="phone" class="form-input" name="phone" placeholder="+7 (Номер телефона)" required />
                         @error('phone') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-div">
                         <span class="form-span"> Ваш регион </span>
-                        <input wire:model="region" type="text" name="region" placeholder="Россия, (Регион)" />
+                        <input wire:model="region" type="text" class="form-input" name="region" placeholder="Россия, (Регион)" />
                         @error('region') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-div">
                         <span class="form-span"> Ваш пароль </span>
-                        <input wire:model="password" type="password" name="password" placeholder="Пароль" required />
+                        <input wire:model="password" type="password" class="form-input" name="password" placeholder="Пароль" required />
                         @error('password') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-div">
                         <span class="form-span"> Повторите пароль </span>
-                        <input wire:model="password_confirmation" type="password" name="password_confirmation" placeholder="Пароль" required />
+                        <input wire:model="password_confirmation" type="password" class="form-input" name="password_confirmation" placeholder="Пароль" required />
                         @error('password_confirmation') <span class="error">{{ $message }}</span> @enderror
                     </div>
                 </div>
@@ -71,7 +71,6 @@
                         checked:after:border-white">
                 </div>
                 <input class="button" type="submit" value="Зарегистрироваться">
-
             </form>
             <div class="exist">
                 <span class="text-sc-gray-text"> Есть аккаунт?

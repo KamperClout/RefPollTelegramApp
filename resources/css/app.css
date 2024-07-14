@@ -16,15 +16,20 @@
         src: url('/fonts/Montserrat-SemiBold.ttf') format('.ttf');
     }
 }
-
-input {
-    @apply bg-sc-form-back text-sc-gray-text rounded-[12px] h-[40px] pl-[15px];
+.big-div {
+    @apply bg-sc-main-font pt-[66px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat;
+}
+.semi-div {
+    @apply bg-white rounded-[28px] h-[668px] w-[344px];
+}
+.form-input{
+    @apply bg-sc-form-back text-sc-gray-text rounded-[12px] h-[40.06px] pl-[15px];
 }
 .form-span {
-    @apply text-sc-gray-text mb-[8px] ml-[8px];
+    @apply text-sc-gray-text mb-[8px] ml-[8px] h-[15.02px];
 }
 .form-div {
-    @apply flex flex-col mt-[16px] ml-[8px] mr-[8px] h-[63px];
+    @apply flex flex-col mt-[16px] ml-[8px] mr-[8px] h-[63px] size-[15.02];
 }
 .button {
     @apply bg-sc-yellow mt-[20px] rounded-[20px] w-[328px] h-[64px] text-black font-MontserratBold;
@@ -35,4 +40,5 @@ input {
 .exist {
     @apply flex flex-row ml-[99px] mt-[16px] mb-[24px];
 }
+
 
