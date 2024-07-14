@@ -4,6 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Livewire\CreateAccount\CreateAccount;
 use App\Livewire\Dashboard\Dashboard;
 use App\Livewire\EntranceAccount\EntranceAccount;
+use App\Livewire\MyClients\MyClients;
+use App\Livewire\MyProfile\MyProfile;
+use App\Livewire\RecoveryAccount\RecoveryAccount;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,21 +21,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
-//    Route::get('/', function () {
-//        return view('dashboard');
-//    })->name('dashboard');
     Route::get('/',Dashboard::class)->name('dashboard');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/my-clients', MyClients::class)->name('my-clients');
+
+    Route::get('/my-profile', MyProfile::class)->name('my-profile');
 });
 
 Route::middleware(['guest'])->group(function () {
-//    Route::get('/create-account', function () {
-//        return view('livewire.create-account.create-account');
-//    });
     Route::get('/register',CreateAccount::class)->name('register');
 
-    Route::get('/login', function () {
-        return view('livewire.entrance-account.entrance-account');
-    })->name('login');
+    Route::get('/login',EntranceAccount::class)->name('login');
+
+    Route::get('/recovery',RecoveryAccount::class)->name('recovery');
 });

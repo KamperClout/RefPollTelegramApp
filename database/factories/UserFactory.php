@@ -33,6 +33,7 @@ class UserFactory extends Factory
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'payments' => $this->faker->randomFloat(2, 0, 10000),
+            'test_passed' => $this->faker->boolean,
         ];
     }
 
