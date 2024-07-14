@@ -7,10 +7,7 @@
     </div>
     <div class="mt-4">
         <!-- Форма поиска по ФИО -->
-        <form wire:submit.prevent="render">
-            <input type="text" wire:model="searchQuery" placeholder="Поиск по ФИО..." class="p-2 border border-gray-300 rounded-md">
-            <button type="submit" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md">Найти</button>
-        </form>
+        <input type="text" wire:model="search" placeholder="Поиск по ФИО..." class="p-2 border border-gray-300 rounded-md"/>
     </div>
     @foreach($clients as $client)
         @if (!$client->is_payment)
@@ -19,4 +16,5 @@
             </div>
         @endif
     @endforeach
+    {{ $clients->links() }}
 </div>

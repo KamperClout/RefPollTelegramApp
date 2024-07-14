@@ -74,7 +74,7 @@
             </form>
             <div class="exist">
                 <span class="text-sc-gray-text"> Есть аккаунт?
-                <a class="text-sc-check font-Montserrat"> Войдите</a>
+                <a href="/login" class="text-sc-check font-Montserrat"> Войдите</a>
                 </span>
             </div>
         </div>
