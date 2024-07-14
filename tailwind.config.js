@@ -20,7 +20,6 @@ module.exports = {
                     'font': '#B1B4BE',
                     'button': '#EFEFEF',
                     'gray-text': '#A0A0A0',
-                    'blue-button': '#0047FF',
                     'form': '#ECECEC',
                     'form-back': '#F3F3F3',
                     'yellow': '#FEE55A',

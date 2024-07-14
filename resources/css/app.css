@@ -18,20 +18,21 @@
 }
 
 input {
-    @apply bg-sc-form-back text-sc-gray-text rounded-12 h-40 pl-15;
+    @apply bg-sc-form-back text-sc-gray-text rounded-[12px] h-[40px] pl-[15px];
 }
 .form-span {
-    @apply text-sc-gray-text mb-8;
+    @apply text-sc-gray-text mb-[8px];
 }
 .form-div {
-    @apply flex flex-col mt-16 ml-8 mr-8;
+    @apply flex flex-col mt-[16px] ml-[8px] mr-[8px];
 }
 .button {
-    @apply bg-sc-yellow mt-20 rounded-full;
+    @apply bg-sc-yellow mt-[20px] rounded-[20px] w-[328px] h-[64px] text-black font-MontserratBold;
 }
 .checkbox {
-    @apply flex flex-row bg-white mt-3;
+    @apply flex flex-row bg-white mt-[19.26px] ml-[24px];
 }
-.check-input {
-    @apply  bg-sc-check ml-117;
+.exist {
+    @apply flex flex-row ml-[99px] mt-[16px];
 }
+
