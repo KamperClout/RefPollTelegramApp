@@ -4,22 +4,32 @@
             <span class="text-black text-base"> Войти в </span>
             <span class="text-black font-MontserratBold text-lg"> Аккаунт </span>
         </div>
-        <form class="bg-white ml-8 mr-8 mt-24 ">
+        @if (session()->has('success'))
+            <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session()->has('error'))
+            <div class="bg-red-200 text-red-800 p-2 mb-4 rounded">
+                {{ session('error') }}
+            </div>
+        @endif
+        <form wire:submit="login" class="bg-white ml-8 mr-8 mt-24 ">
             <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px] border-opacity-80">
                 <div class="form-div">
                     <span class="form-span"> Номер телефона </span>
-                    <input type="phone" class="form-input" name="phone" placeholder="+7 (Номер телефона)" required />
-{{--                    @error('phone') <span class="error">{{ $message }}</span> @enderror--}}
+                    <input wire:model="phone" type="phone" class="form-input" name="phone" placeholder="+7 (Номер телефона)" required />
+                    @error('phone') <span class="error">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-div">
                     <span class="form-span"> Ваш пароль </span>
-                    <input type="password" class="form-input" name="password" placeholder="Пароль" required />
-{{--                    @error('password') <span class="error">{{ $message }}</span> @enderror--}}
+                    <input wire:model="password" type="password" class="form-input" name="password" placeholder="Пароль" required />
+                    @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="checkbox">
                 <span for="newsletter">Оставаться в системе</span>
-                <input type="checkbox"
+                <input wire:model="remember" type="checkbox"
                        class="ml-[117px]
                         relative
                         appearance-none
