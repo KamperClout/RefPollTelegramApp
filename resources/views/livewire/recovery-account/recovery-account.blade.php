@@ -53,8 +53,8 @@
                 <input class="button" type="submit" value="Сброс пароля">
             </form>
             <div class="text-center mb-[16px]">
-                <span class="text-sc-gray-text"> Повторить отправку через: </span>
-                <span class="text-sc-gray-text" id="countdown-timer">30</span>
+                <span class="text-sc-gray-text"> Повторить отправку через:</span>
+                <span class="text-sc-gray-text" id="countdown-timer">0:30</span>
                 <span class="text-sc-gray-text">секунд</span>
             </div>
         </div>
@@ -66,7 +66,7 @@
         let countdown = 30;
         let timer = setInterval(() => {
             countdown--;
-            document.getElementById('countdown-timer').textContent = countdown;
+            document.getElementById('countdown-timer').textContent = '0:' + countdown;
             if (countdown <= 0) {
                 clearInterval(timer);
                 location.reload();
