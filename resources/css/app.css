@@ -21,18 +21,18 @@ input {
     @apply bg-sc-form-back text-sc-gray-text rounded-[12px] h-[40px] pl-[15px];
 }
 .form-span {
-    @apply text-sc-gray-text mb-[8px];
+    @apply text-sc-gray-text mb-[8px] ml-[8px];
 }
 .form-div {
-    @apply flex flex-col mt-[16px] ml-[8px] mr-[8px];
+    @apply flex flex-col mt-[16px] ml-[8px] mr-[8px] h-[63px];
 }
 .button {
     @apply bg-sc-yellow mt-[20px] rounded-[20px] w-[328px] h-[64px] text-black font-MontserratBold;
 }
 .checkbox {
-    @apply flex flex-row bg-white mt-[19.26px] ml-[24px];
+    @apply flex flex-row bg-white mt-[19.26px] ml-[24px] h-[20px];
 }
 .exist {
-    @apply flex flex-row ml-[99px] mt-[16px];
+    @apply flex flex-row ml-[99px] mt-[16px] mb-[24px];
 }
 

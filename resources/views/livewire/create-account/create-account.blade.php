@@ -1,6 +1,6 @@
-<div class="bg-sc-main-font pt-[66px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android rounded-[36px] font-Montserrat">
-    <div class="bg-white rounded-[28px]">
-        <div class="flex flex-col border-[1px] border-sc-border pb-[8px]">
+<div class="bg-sc-main-font pt-[66px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat">
+    <div class="bg-white rounded-[28px] h-[668px] w-[344px]">
+        <div class="flex flex-col border-[1px] border-sc-border pb-[8px] h-[668px]">
             <div class="flex flex-col mt-[24px] ml-[24px]">
                 <span class="text-black text-base"> Регистрация </span>
                 <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
