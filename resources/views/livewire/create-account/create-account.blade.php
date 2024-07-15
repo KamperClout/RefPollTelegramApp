@@ -6,6 +6,9 @@
                     <span class="text-black text-base"> Регистрация </span>
                     <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
                 </div>
+                <div class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px]">
+                    <button class=""></button>
+                </div>
             </div>
             @if (session()->has('success'))
                 <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">

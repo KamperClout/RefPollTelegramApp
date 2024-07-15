@@ -11,10 +11,15 @@
                     {{ session('error') }}
                 </div>
             @endif
-            <div class="flex flex-col mt-[24px] ml-[24px]">
-                <span class="text-black text-base"> Восстановление </span>
-                <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
-            </div>
+               <div class="flex flex-row">
+                   <div class="flex flex-col mt-[24px] ml-[24px]">
+                       <span class="text-black text-base"> Восстановление </span>
+                       <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
+                   </div>
+                   <div class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px]">
+                       <button class=""></button>
+                   </div>
+               </div>
             <form wire:submit.prevent="sendSms" class="bg-white ml-8 mr-8 mt-24 ">
                 <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px] border-opacity-80">
                     <div class="flex flex-col mt-[24px] ml-[8px] mr-[8px] size-[15.02]">
