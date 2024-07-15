@@ -3,8 +3,8 @@
         <div class="flex flex-col border-[1px] border-sc-border pb-[8px] h-[668px]">
             <div class="flex flex-row">
                 <div class="flex flex-col mt-[24px] ml-[24px]">
-                    <span class="text-black text-base"> Регистрация </span>
-                    <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
+                    <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Регистрация </span>
+                    <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунта </span>
                 </div>
                 <div wire:click="redirectToLogin" class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px] cursor-pointer">
                     <button class=""></button>

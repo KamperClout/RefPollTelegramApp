@@ -37,7 +37,7 @@
                                 <button class=""></button>
                             </div>
                         </div>
-                        <span class="ml-[16px] mt-[7px]"> Мои Клиенты </span>
+                        <span class="ml-[16px] mt-[7px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Мои Клиенты </span>
                     </a>
                     <a href="/" class="flex flex-row w-[328px] h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
                         <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
@@ -45,7 +45,7 @@
                                 <button class=""></button>
                             </div>
                         </div>
-                        <span class="ml-[16px] mt-[7px]"> Мои Выплаты </span>
+                        <span class="ml-[16px] mt-[7px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Мои Выплаты </span>
                     </a>
                     <a href="/my-profile" class="flex flex-row w-[328px] h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
                         <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
@@ -53,7 +53,7 @@
                                 <button class=""></button>
                             </div>
                         </div>
-                        <span class="ml-[16px] mt-[7px]"> Профиль </span>
+                        <span class="ml-[16px] mt-[7px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Профиль </span>
                     </a>
                 </div>
             </div>

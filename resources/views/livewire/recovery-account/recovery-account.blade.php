@@ -3,8 +3,8 @@
         <div class="bg-white rounded-[28px] w-[344px] h-[293px] mt-[253px] mb-[254px] border-[1px] border-sc-border">
                <div class="flex flex-row">
                    <div class="flex flex-col mt-[24px] ml-[24px]">
-                       <span class="text-black text-base"> Восстановление </span>
-                       <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
+                       <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Восстановление </span>
+                       <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунта </span>
                    </div>
                    <div wire:click="redirectToLogin" class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px] cursor-pointer">
                        <button class=""></button>

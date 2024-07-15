@@ -1,8 +1,8 @@
 <div class="big-div">
     <div class="bg-white rounded-[28px] w-[344px] h-[466px] mt-[166px] mb-[168px] border-[1px] border-sc-border">
         <div class="flex flex-col mt-[24px] ml-[24px]">
-            <span class="text-black text-base"> Войти в </span>
-            <span class="text-black font-MontserratBold text-lg"> Аккаунт </span>
+            <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Войти в </span>
+            <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунт </span>
         </div>
         @if (session()->has('success'))
             <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">
