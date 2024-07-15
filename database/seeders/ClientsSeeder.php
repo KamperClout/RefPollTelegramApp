@@ -19,9 +19,9 @@ class ClientsSeeder extends Seeder
 
         for ($i = 1; $i <= 5; $i++) {
             DB::table('clients')->insert([
-                'name' => 'Клиент ' . $i,
-                'surname' => 'Фамилия ' . $i,
-                'patronymic' => 'Отчество ' . $i,
+                'name' => 'Клиент' . $i,
+                'surname' => 'Фамилия' . $i,
+                'patronymic' => 'Отчество' . $i,
                 'region' => 'Россия, (Саратов)',
                 'deposit' => true,
                 'debt_amount' => 10000.00,
