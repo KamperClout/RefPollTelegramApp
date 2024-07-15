@@ -55,7 +55,7 @@
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
             </div>
-            <input class="button" type="submit" value="Войти">
+            <input class="button cursor-pointer" type="submit" value="Войти">
         </form>
         <div class="flex flex-row ml-[63px] mt-[16px] mb-[24px]">
                 <span class="text-sc-gray-text"> Нет аккаунта?

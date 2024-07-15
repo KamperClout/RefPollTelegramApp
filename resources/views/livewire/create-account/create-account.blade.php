@@ -75,7 +75,7 @@
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
                 </div>
-                <input class="button" type="submit" value="Зарегистрироваться">
+                <input class="button cursor-pointer" type="submit" value="Зарегистрироваться">
             </form>
             <div class="exist">
                 <span class="text-sc-gray-text"> Есть аккаунт?

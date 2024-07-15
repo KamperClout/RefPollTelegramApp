@@ -104,7 +104,7 @@
                 <label for="radio-6">> 500 т. р.</label>
             </div>
             @error('form.debt_amount') <span class="error">{{ $message }}</span> @enderror
-            <input type="submit" value="Добавить клиента">
+            <input type="submit" class="cursor-pointer" value="Добавить клиента">
         </form>
 
     @endif

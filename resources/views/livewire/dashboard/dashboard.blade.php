@@ -8,13 +8,35 @@
         <div>{{'.' . $copecks}}</div>
     </div>
     <div>
+        <select wire:model="sortSelected" wire:change="sortBy()">
+            <option value="createdAt asc">Последние Транзакции</option>
+            <option value="createdAt desc">Старые Транзакции</option>
+        </select>
+    </div>
+    <div>
         @foreach ($paymentDTOs as $date => $payments)
-            <h2>{{ $date }}</h2>
-            <ul>
-                @foreach ($payments as $payment)
-                    <li>{{ $payment['name'] }} {{ $payment['surname'] }} - {{ $payment['amount'] }}</li>
-                @endforeach
-            </ul>
+            <h2>{{ $formatDate($date) }}</h2>
+            @foreach ($payments as $index => $payment)
+                @if ($loop->first || $loop->last)
+                    <div style="background-color: green;">
+                        <div>
+                            {{ $payment['surname'] }} {{ $payment['name'] }}
+                        </div>
+                        <div>
+                            {{'+ ' . $payment['amount'] }}
+                        </div>
+                    </div>
+                @else
+                    <div style="background-color: gray;">
+                        <div>
+                            {{ $payment['surname'] }} {{ $payment['name'] }}
+                        </div>
+                        <div>
+                            {{ $payment['amount'] }}
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         @endforeach
     </div>
 </div>

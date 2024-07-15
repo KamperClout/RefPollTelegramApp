@@ -28,7 +28,7 @@
                         @error('phone') <span class="error">{{ $message }}</span> @enderror
                     </div>
                 </div>
-                <input onclick="startCountdown()" class="button" type="submit" value="Отправить код по смс">
+                <input onclick="startCountdown()" class="button cursor-pointer" type="submit" value="Отправить код по смс">
             </form>
         </div>
     @elseif ($step === 2)
@@ -60,7 +60,7 @@
                         @error('smsCode') <span class="error">{{ $message }}</span> @enderror
                     </div>
                 </div>
-                <input class="button" type="submit" value="Сброс пароля">
+                <input class="button cursor-pointer" type="submit" value="Сброс пароля">
             </form>
             <div class="text-center mb-[16px]">
                 <span class="text-sc-gray-text"> Повторить отправку через:</span>
