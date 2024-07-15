@@ -26,10 +26,19 @@ class CreateAccount extends Component
     {
         $this->validate();
 
+        $parts = explode(' ', $this->fio);
+        $parts = array_slice($parts, 0, 3);
+        $this->fio = implode(' ', $parts);
         $parts = explode(' ', $this->fio, 3);
+
         $this->surname = $parts[0] ?? '';
         $this->name = $parts[1] ?? '';
         $this->patronymic = $parts[2] ?? '';
+
+        if ($this->surname=='' || $this->name==''){
+            $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation', 'is_leave');
+            session()->flash('error', 'Ошибка при создании пользователя.');
+        }
 
         try {
             $user = User::create([
@@ -49,7 +58,8 @@ class CreateAccount extends Component
 
             $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation', 'is_leave');
         } catch (\Exception $e) {
-            session()->flash('error', 'Ошибка при создании пользователя: ' . $e->getMessage());
+            $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation', 'is_leave');
+            session()->flash('error', 'Ошибка при создании пользователя');
         }
     }
 
@@ -61,6 +71,7 @@ class CreateAccount extends Component
             Auth::login($user);
             return redirect()->intended('/');
         } else {
+            $this->reset('fio', 'region', 'phone', 'password', 'password_confirmation', 'is_leave');
             session()->flash('error', 'Не удалось найти пользователя с данным номером телефона');
         }
     }

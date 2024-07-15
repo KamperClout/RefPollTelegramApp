@@ -24,7 +24,6 @@ class MyClients extends Component
         $this->clients = $query->get();
         $this->paidCount = Client::where('user_id', $user->id)->where('is_payment', true)->count();
         $this->unpaidCount = Client::where('user_id', $user->id)->where('is_payment', false)->count();
-        $this->showForm = false;
     }
 
     public function openForm()

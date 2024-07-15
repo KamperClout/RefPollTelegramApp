@@ -23,10 +23,19 @@ class ClientForm extends Form
     {
         $this->validate();
 
+        $parts = explode(' ', $this->fio);
+        $parts = array_slice($parts, 0, 3);
+        $this->fio = implode(' ', $parts);
         $parts = explode(' ', $this->fio, 3);
+
         $this->surname = $parts[0] ?? '';
         $this->name = $parts[1] ?? '';
         $this->patronymic = $parts[2] ?? '';
+
+        if ($this->surname=='' || $this->name==''){
+            $this->reset('fio', 'phone', 'region', 'deposit', 'debt_amount');
+            session()->flash('error', 'Ошибка при создании клиента.');
+        }
 
         try {
             Client::create(['name' => $this->name,
@@ -42,7 +51,7 @@ class ClientForm extends Form
 
             $this->reset('fio', 'phone', 'region', 'deposit', 'debt_amount');
         } catch (\Exception $e) {
-            session()->flash('error', 'Ошибка при создании пользователя: ' . $e->getMessage());
+            session()->flash('error', 'Ошибка при создании клиента.');
         }
     }
 
