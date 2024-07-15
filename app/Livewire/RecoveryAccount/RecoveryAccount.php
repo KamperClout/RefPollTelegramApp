@@ -23,18 +23,15 @@ class RecoveryAccount extends Component
 
         $this->user = User::where('phone', $this->phone)->first();
         if (!$this->user){
-            $this->reset('phone', 'smsCode');
-
-            $this->user = null;
+            redirect()->route('recovery');
 
             session()->flash('error', 'Вы не зарегистрированы');
-
-            return;
         }
+        else{
+            $this->hiddenSmsCode=$this->generateSmsCode();
 
-        $this->hiddenSmsCode=$this->generateSmsCode();
-
-        $this->step = 2;
+            $this->step = 2;
+        }
     }
 
     public function verifySms()
@@ -47,25 +44,15 @@ class RecoveryAccount extends Component
 
             $this->updatePassword($this->user,$newPassword);
 
-            $this->step = 1;
-
-            $this->hiddenSmsCode = '';
-
-            $this->user = null;
+            redirect()->route('recovery');
 
             session()->flash('message', 'Аккаунт восстановлен успешно! Ваш новый пароль: ' . $newPassword);
         }
         else{
-            $this->step = 1;
-
-            $this->hiddenSmsCode = '';
-
-            $this->user = null;
+            redirect()->route('recovery');
 
             session()->flash('error', 'Вы ввели не тот СМС');
         }
-
-        $this->reset('phone', 'smsCode');
     }
 
     public function updatePassword($user, $newPassword)
