@@ -20,6 +20,16 @@
             +
         </button>
     @else
+        @if (session()->has('success'))
+            <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session()->has('error'))
+            <div class="bg-red-200 text-red-800 p-2 mb-4 rounded">
+                {{ session('error') }}
+            </div>
+        @endif
         <form wire:submit="addClient">
             <button wire:click="closeForm">
                 +
@@ -27,17 +37,17 @@
             <div>
                 <span > Ваше ФИО </span>
                 <input wire:model="form.fio" type="text" name="fio" placeholder="Фамилия Имя Отчество*" required/>
-                @error('fio') <span class="error">{{ $message }}</span> @enderror
+                @error('form.fio') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div>
                 <span > Ваш телефон </span>
                 <input wire:model="form.phone" type="tel" name="phone" placeholder="Телефон" required/>
-                @error('phone') <span class="error">{{ $message }}</span> @enderror
+                @error('form.phone') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div>
                 <span > Ваш регион </span>
                 <input wire:model="form.region" type="text" name="region" placeholder="Регион" required/>
-                @error('region') <span class="error">{{ $message }}</span> @enderror
+                @error('form.region') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="checkbox">
                 <span for="newsletter">Наличие залога</span>
@@ -93,6 +103,7 @@
                 <input wire:model="form.debt_amount" id="radio-6" type="radio" name="radio" value="> 500 т. р.">
                 <label for="radio-6">> 500 т. р.</label>
             </div>
+            @error('form.debt_amount') <span class="error">{{ $message }}</span> @enderror
             <input type="submit" value="Добавить клиента">
         </form>
 

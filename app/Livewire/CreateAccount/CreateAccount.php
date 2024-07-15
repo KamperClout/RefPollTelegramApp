@@ -14,7 +14,7 @@ class CreateAccount extends Component
     public $fio;
     #[Rule('required')]
     public $region;
-    #[Rule('required|string|unique:users,phone')]
+    #[Rule(['required', 'string', 'unique:users,phone', 'regex:/^\+7\d{10}$/'])]
     public $phone;
     #[Rule('required|string|min:8|confirmed')]
     public $password;
@@ -63,6 +63,11 @@ class CreateAccount extends Component
         } else {
             session()->flash('error', 'Не удалось найти пользователя с данным номером телефона');
         }
+    }
+
+    public function redirectToLogin()
+    {
+        return redirect()->route('login');
     }
 
     public function render()

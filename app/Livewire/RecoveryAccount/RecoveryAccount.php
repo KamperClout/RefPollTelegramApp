@@ -11,7 +11,8 @@ class RecoveryAccount extends Component
 {
     public $step = 1;
     public $hiddenSmsCode = '';
-    #[Rule('required|string')]
+    public $user;
+    #[Rule(['required', 'string', 'regex:/^\+7\d{10}$/'])]
     public $phone;
     #[Rule('required|digits:6')]
     public $smsCode;
@@ -20,9 +21,11 @@ class RecoveryAccount extends Component
     {
         $this->validateOnly('phone');
 
-        $user = User::where('phone', $this->phone)->first();
-        if (!$user){
+        $this->user = User::where('phone', $this->phone)->first();
+        if (!$this->user){
             $this->reset('phone', 'smsCode');
+
+            $this->user = null;
 
             session()->flash('error', 'Вы не зарегистрированы');
 
@@ -42,11 +45,13 @@ class RecoveryAccount extends Component
 
             $newPassword=$this->generatePassword();
 
-            $this->updatePassword($this->phone,$newPassword);
+            $this->updatePassword($this->user,$newPassword);
 
             $this->step = 1;
 
             $this->hiddenSmsCode = '';
+
+            $this->user = null;
 
             session()->flash('message', 'Аккаунт восстановлен успешно! Ваш новый пароль: ' . $newPassword);
         }
@@ -55,15 +60,16 @@ class RecoveryAccount extends Component
 
             $this->hiddenSmsCode = '';
 
+            $this->user = null;
+
             session()->flash('error', 'Вы ввели не тот СМС');
         }
 
         $this->reset('phone', 'smsCode');
     }
 
-    public function updatePassword($phone, $newPassword)
+    public function updatePassword($user, $newPassword)
     {
-        $user = User::where('phone', $phone)->first();
         if ($user) {
             $user->password = Hash::make($newPassword);
             $user->save();
@@ -99,6 +105,11 @@ class RecoveryAccount extends Component
         }
 
         return $smsCode;
+    }
+
+    public function redirectToLogin()
+    {
+        return redirect()->route('login');
     }
 
     public function render()

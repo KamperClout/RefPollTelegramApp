@@ -34,6 +34,7 @@ class MyClients extends Component
 
     public function closeForm()
     {
+        $this->form->resetFields();
         $this->showForm = false;
     }
 

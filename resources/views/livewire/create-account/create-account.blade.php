@@ -6,7 +6,7 @@
                     <span class="text-black text-base"> Регистрация </span>
                     <span class="text-black font-MontserratBold text-lg"> Аккаунта </span>
                 </div>
-                <div class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px]">
+                <div wire:click="redirectToLogin" class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px] cursor-pointer">
                     <button class=""></button>
                 </div>
             </div>

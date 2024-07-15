@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class EntranceAccount extends Component
 {
-    #[Rule('required|string')]
+    #[Rule(['required', 'string', 'regex:/^\+7\d{10}$/'])]
     public $phone;
     #[Rule('required|string|min:8')]
     public $password;
@@ -21,13 +21,13 @@ class EntranceAccount extends Component
         $this->validate();
 
         try {
-            return $this->findPhoneAndLogin($this->phone);
+            return $this->findPhoneAndLogin($this->phone,$this->password,$this->remember);
         } catch (\Exception $e) {
             session()->flash('error', 'Ошибка при входе в аккаунт: ' . $e->getMessage());
         }
     }
 
-    public function findPhoneAndLogin($phone)
+    public function findPhoneAndLogin($phone, $password, $remember)
     {
         $user = User::where('phone', $phone)->first();
         if (!$this->remember){
@@ -35,7 +35,7 @@ class EntranceAccount extends Component
 
             $this->reset('phone', 'password', 'remember');
         }
-        else if ($user) {
+        else if ($user && Auth::attempt(['phone' => $phone, 'password' => $password], $remember)) {
             Auth::login($user);
             return redirect()->intended('/');
         }

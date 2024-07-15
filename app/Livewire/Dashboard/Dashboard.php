@@ -9,6 +9,7 @@ class Dashboard extends Component
 {
     public function render()
     {
+        Auth::logout();
         return view('livewire.dashboard.dashboard');
     }
 }
