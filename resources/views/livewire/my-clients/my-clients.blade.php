@@ -18,11 +18,11 @@
         </div>
         <div class="w-[344px] h-[470px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border flex flex-col mt-[8px]">
 {{--            <div class="top-[352px] left-[29px] w-[16px] h-[16px] bg-[url('/images/search-normal.png')]"> </div>--}}
-{{--            <input type="text" class="w-[328px] h-[40px] border rounded-[12px] mt-[8px] ml-[8px] bg-sc-form-back mb-[4px]" placeholder=""/>--}}
-            <div class="search">
-                <img src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" class="search-icon">
-                <input wire:model.lazy="search" type="text" class="search-field" placeholder="">
-            </div>
+            <input wire:model.lazy="search" type="text" class="w-[328px] h-[40px] border rounded-[12px] mt-[8px] ml-[8px] bg-sc-form-back mb-[4px]" placeholder=""/>
+{{--            <div class="search">--}}
+{{--                <img src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="" class="search-icon">--}}
+{{--                <input wire:model.lazy="search" type="text" class="search-field" placeholder="">--}}
+{{--            </div>--}}
             <div class="client-list-container" style="max-height: 410px; overflow-y: auto;">
                 @foreach($clients as $client)
                     @if (!$client->is_payment)

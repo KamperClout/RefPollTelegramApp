@@ -13,7 +13,7 @@ class EntranceAccount extends Component
     public $phone;
     #[Rule('required|string|min:8')]
     public $password;
-    #[Rule('required')]
+    #[Rule('nullable')]
     public $remember = false;
 
     public function login()
@@ -30,12 +30,7 @@ class EntranceAccount extends Component
     public function findPhoneAndLogin($phone, $password, $remember)
     {
         $user = User::where('phone', $phone)->first();
-        if (!$this->remember){
-            session()->flash('error', 'Вы не согласились остаться в системе');
-
-            $this->reset('phone', 'password', 'remember');
-        }
-        else if ($user && Auth::attempt(['phone' => $phone, 'password' => $password], $remember)) {
+        if ($user && Auth::attempt(['phone' => $phone, 'password' => $password])) {
             Auth::login($user);
             return redirect()->intended('/');
         }

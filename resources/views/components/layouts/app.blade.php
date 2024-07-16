@@ -8,9 +8,9 @@
     </head>
     <body>
         <div class="flex-grow">
-            <div class="big-div">
+            <div class="big-div ">
                 @auth
-                    <div class="flex flex-col">
+                    <div class="flex flex-col" style="position: absolute; z-index: 8; top: 46px;">
                         <div class="w-[338px] h-[40px] flex flex-row">
                             <div id="buttonShow" class="w-[40px] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[14px] ml-[8px] cursor-pointer" onclick="toggleSidebar()">
                                 <div class="w-[12px] h-[12px] bg-[url('/images/navigation.png')]">
@@ -22,7 +22,7 @@
                                     <button class=""></button>
                                 </div>
                             </div>
-                            <div class="w-[216px] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[16px] pl-[57px] pt-[7px]" onclick="changePageTitle('Мои выплаты')">
+                            <div class="text-center w-[216px] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[16px]  pt-[7px]" onclick="changePageTitle('Мои выплаты')">
                                 <span class="" id="pageTitle">  </span>
                             </div>
                             <form id="logoutForm" method="POST" action="{{ route('logout') }}" class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px] ml-[16px]">
@@ -60,7 +60,10 @@
                         </div>
                     </div>
                 @endauth
-                <div id="darkening">
+                    <div class="big-div fixed top-0 left-0 w-full h-full" id="shadowDiv" style="background-color: rgba(0, 0, 0, 0.16); display: none;">
+                        <!-- Content to overlay -->
+                    </div>
+                <div style="margin-top: 62px;" id="darkening">
                     {{ $slot }}
                 </div>
             </div>
@@ -71,16 +74,19 @@
                 var sidebar = document.getElementById('sidebar');
                 var buttonShow = document.getElementById('buttonShow');
                 var buttonHide = document.getElementById('buttonHide');
+                var shadowDiv = document.getElementById('shadowDiv');
                 if (sidebar.style.display === 'none') {
                     sidebar.style.display = 'block';
                     buttonShow.style.display = 'none';
                     buttonHide.style.display = 'block';
+                    shadowDiv.style.display = 'block';
                     disableScroll();
                     // darkenElements()
                 } else {
                     sidebar.style.display = 'none';
                     buttonShow.style.display = 'block';
                     buttonHide.style.display = 'none';
+                    shadowDiv.style.display = 'none';
                     enableScroll();
                 }
             }
