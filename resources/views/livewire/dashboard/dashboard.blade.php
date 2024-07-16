@@ -1,11 +1,17 @@
 <div>
-    <h1 class="text-2xl font-bold text-blue-variant-gray-text">Welcome to your Dashboard!</h1>
-    <p class="mt-4 text-blue-variant-font">This is the dashboard page.</p>
-    <div>Мои</div>
-    <div>Выплаты</div>
-    <div>
-        <div>{{'₽' . ' ' . $rubles}}</div>
-        <div>{{'.' . $copecks}}</div>
+    <div class="w-[344px] h-[164px] rounded-[28px] flex flex-col
+    border-[1px] border-sc-border bg-white mt-[16px]">
+        <div class="flex flex-row">
+            <div class="flex flex-col mt-[24px] ml-[24px]">
+                <div class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black">Мои</div>
+                <div class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black">Выплаты</div>
+                <div class="flex flex-row">
+                    <div class="text-sc-check font-semibold font-Montserrat text-[33px]">{{'₽' . ' ' . $rubles}}</div>
+                    <div class="text-sc-check font-semibold font-Montserrat text-[16px] mt-[7px]">{{'.' . $copecks}}</div>
+                </div>
+            </div>
+            <button class="w-[40px] h-[40px] bg-[url('/images/down.png')] ml-[140px] mt-[19px]"></button>
+        </div>
     </div>
     <div>
         <select wire:model="sortSelected" wire:change="sortBy()">

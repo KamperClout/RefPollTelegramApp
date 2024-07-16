@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-[344px] h-[450px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border flex flex-col mt-[8px]">
+        <div class="w-[344px] h-[470px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border flex flex-col mt-[8px]">
             <div class="fixed top-[352px] left-[29px] w-[16px] h-[16px] bg-[url('/images/search-normal.png')]"> </div>
             <input type="text" wire:model.lazy="search" class="w-[328px] h-[40px] border rounded-[12px] mt-[8px] ml-[8px] bg-sc-form-back mb-[4px]" placeholder=""/>
             <div class="client-list-container" style="max-height: 410px; overflow-y: auto;">
@@ -124,17 +124,17 @@
                             </div>
                         </div>
                         <div class="flex flex-col">
-                            <div class="form_radio_btn">
+                            <div class="form_radio_btn ml-[4px]">
                                 <input wire:model="form.debt_amount" id="radio-2" type="radio" name="radio" value="100 - 200 т. р.">
                                 <label for="radio-2">100 - 200 т. р.</label>
                             </div>
-                            <div class="form_radio_btn">
+                            <div class="form_radio_btn ml-[4px]">
                                 <input wire:model="form.debt_amount" id="radio-4" type="radio" name="radio" value="300 - 400 т. р.">
                                 <label for="radio-4">300 - 400 т. р.</label>
                             </div>
-                            <div class="form_radio_btn">
+                            <div class="form_radio_btn ml-[4px]">
                                 <input wire:model="form.debt_amount" id="radio-6" type="radio" name="radio" value="> 500 т. р.">
-                                <label for="radio-6"> 500 т. р.</label>
+                                <label for="radio-6"> > 500 т. р.</label>
                             </div>
                         </div>
                     </div>

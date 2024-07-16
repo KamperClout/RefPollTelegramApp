@@ -42,7 +42,7 @@
 }
 
 .form_radio_btn {
-    @apply inline-block mr-4 w-full; /* Make it inline-block and full-width */
+    @apply w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]; /* Make it inline-block and full-width */
 }
 
 .form_radio_btn input[type=radio] {
@@ -50,12 +50,12 @@
 }
 
 .form_radio_btn label {
-    @apply inline-flex items-center justify-center text-center text-sc-gray-text cursor-pointer px-4 py-2 leading-9 border border-gray-300 rounded-full select-none w-full h-10; /* Make label full-width, set height to 40px, center text, and add 1px border */
+    @apply inline-flex items-center justify-center text-center text-sc-gray-text cursor-pointer px-4 py-2 leading-9 select-none w-full h-10; /* Make label full-width, set height to 40px, center text, and add 1px border */
 }
 
 /* Checked state */
 .form_radio_btn input[type=radio]:checked + label {
-    @apply bg-sc-check text-white; /* Apply custom check background color and text color */
+    @apply bg-sc-check text-white rounded-[12px] border-sc-check; /* Apply custom check background color and text color */
 }
 
 /* Hover state */
