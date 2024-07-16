@@ -67,3 +67,19 @@
 .form_radio_btn input[type=radio]:disabled + label {
     @apply bg-white text-sc-gray-text cursor-not-allowed; /* Customize background and text color for disabled state */
 }
+
+.search {
+    @apply inline-flex border-[1px] border-black rounded-[30px] p-[10px];
+}
+
+.search-icon {
+    @apply w-[20px] h-[20px] mr-[10px] -ml-[10px]; /* This adjusts margin-left to achieve similar effect */
+}
+
+.search-field {
+    @apply w-[300px] border-0;
+}
+
+.search-field:focus + .search-icon {
+    /* styles for the icon when field is focused */
+}
