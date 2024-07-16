@@ -1,6 +1,6 @@
 <div>
-    @if (!$showForm)
-        <div class="w-[344px] h-[212px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[26px]">
+    @if ($showForm)
+        <div class="w-[344px] h-[212px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[16px]">
             <div class="flex flex-col mt-[32px] ml-[24px]">
                 <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Мои </span>
                 <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Клиенты </span>
@@ -48,28 +48,38 @@
             </div>
         @endif
         <form wire:submit="addClient">
-            <button wire:click="closeForm">
-                +
-            </button>
-            <div>
-                <span > Ваше ФИО </span>
-                <input wire:model="form.fio" type="text" name="fio" placeholder="Фамилия Имя Отчество*" required/>
-                @error('form.fio') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <div>
-                <span > Ваш телефон </span>
-                <input wire:model="form.phone" type="tel" name="phone" placeholder="Телефон" required/>
-                @error('form.phone') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <div>
-                <span > Ваш регион </span>
-                <input wire:model="form.region" type="text" name="region" placeholder="Регион" required/>
-                @error('form.region') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <div class="checkbox">
-                <span for="newsletter">Наличие залога</span>
-                <input wire:model="form.deposit" type="checkbox"
-                       class="ml-[117px]
+            <div class="w-[344px] h-[690px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[15px]">
+                <div class="flex flex-row">
+                    <div class="flex flex-col mt-[24px] ml-[24px]">
+                        <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Новый </span>
+                        <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Клиент </span>
+                    </div>
+                    <div class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px]">
+                        <button wire:click="closeForm"></button>
+                    </div>
+                </div>
+                <div class=" w-[328px] h-[247px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[15px]">
+                    <div class="form-div">
+                        <span class="form-span"> ФИО  Клиента </span>
+                        <input wire:model="form.fio" class="form-input" type="text" name="fio" placeholder="Фамилия Имя Отчество*" required/>
+                        @error('form.fio') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="form-div">
+                        <span class="form-span"> Телефон Клиента </span>
+                        <input wire:model="form.phone" class="form-input" type="tel" name="phone" placeholder="+7 (Номер телефона)" required/>
+                        @error('form.phone') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="form-div">
+                        <span class="form-span"> Регион Клиента</span>
+                        <input wire:model="form.region" class="form-input" type="text" name="region" placeholder="Россия, (Регион)" required/>
+                        @error('form.region') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+                <div class="w-[328px] h-[56px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-row mt-[4px] pt-[17px] pl-[16px]">
+                    <span for="newsletter" class="font-Montserrat font-medium text-sc-almost-black">Наличие залога</span>
+                    <div class="">
+                        <input wire:model="form.deposit" type="checkbox"
+                               class="ml-[156px]
                         relative
                         appearance-none
                         inline block
@@ -92,37 +102,46 @@
                         checked:border-sc-check
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
-            </div>
-            <div>
-                <input wire:model="form.debt_amount" id="radio-1" type="radio" name="radio" value="< 100 т. р." checked>
-                <label for="radio-1">< 100 т. р.</label>
-            </div>
+                    </div>
+                </div>
+                <div class="w-[328px] h-[184px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border flex flex-col mt-[4px] pt-[17px] pl-[8px]">
+                    <span class="font-Montserrat font-medium text-sc-almost-black mb-[8px] ml-[7px]"> Сумма долга</span>
+                    <div class="flex flex-row">
+                        <div class="flex flex-col">
+                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]">
+                                <input wire:model="form.debt_amount" class="ml-[43px] mt-[11px]" id="radio-1" type="radio" name="radio" value="< 100 т. р." checked>
+                                <label for="radio-1" class="text-sc-gray-text"> < 100 т. р.</label>
+                            </div>
+                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]">
+                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-3" type="radio" name="radio" value="200 - 300 т. р.">
+                                <label for="radio-3" class="text-sc-gray-text">200 - 300 т. р.</label>
+                            </div>
+                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]">
+                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-5" type="radio" name="radio" value="400 - 500 т. р.">
+                                <label for="radio-5" class="text-sc-gray-text">400 - 500 т. р.</label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px] ml-[4px]">
+                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-2" type="radio" name="radio" value="100 - 200 т. р.">
+                                <label for="radio-2" class="text-sc-gray-text">100 - 200 т. р.</label>
+                            </div>
 
-            <div>
-                <input wire:model="form.debt_amount" id="radio-2" type="radio" name="radio" value="100 - 200 т. р.">
-                <label for="radio-2">100 - 200 т. р.</label>
-            </div>
+                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px] ml-[4px]">
+                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-4" type="radio" name="radio" value="300 - 400 т. р.">
+                                <label for="radio-4" class="text-sc-gray-text">300 - 400 т. р.</label>
+                            </div>
 
-            <div>
-                <input wire:model="form.debt_amount" id="radio-3" type="radio" name="radio" value="200 - 300 т. р.">
-                <label for="radio-3">200 - 300 т. р.</label>
+                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px] ml-[4px]">
+                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-6" type="radio" name="radio" value="> 500 т. р.">
+                                <label for="radio-6" class="text-sc-gray-text"> > 500 т. р.</label>
+                            </div>
+                        </div>
+                    </div>
+                    @error('form.debt_amount') <span class="error">{{ $message }}</span> @enderror
+                </div>
+                <input type="submit" class="button ml-[8px] cursor-pointer" value="Добавить клиента">
             </div>
-
-            <div>
-                <input wire:model="form.debt_amount" id="radio-4" type="radio" name="radio" value="300 - 400 т. р.">
-                <label for="radio-4">300 - 400 т. р.</label>
-            </div>
-            <div>
-                <input wire:model="form.debt_amount" id="radio-5" type="radio" name="radio" value="400 - 500 т. р.">
-                <label for="radio-5">400 - 500 т. р.</label>
-            </div>
-            <div>
-                <input wire:model="form.debt_amount" id="radio-6" type="radio" name="radio" value="> 500 т. р.">
-                <label for="radio-6">> 500 т. р.</label>
-            </div>
-            @error('form.debt_amount') <span class="error">{{ $message }}</span> @enderror
-            <input type="submit" class="cursor-pointer" value="Добавить клиента">
         </form>
-
     @endif
 </div>
