@@ -32,7 +32,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div id="sidebar" class="fixed top-[102px] w-[344px] h-[192px] bg-white rounded-[28px] border-[1px] border-sc-border" style="display: none;">
+                        <div id="sidebar" class="absolute w-[344px] h-[192px] bg-white rounded-[28px] border-[1px] border-sc-border" style="display: none; top: 62px;">
                             <a href="/my-clients" class="flex flex-row w-[328px] h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[8px] pl-[8px] pt-[8px]">
                                 <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
                                     <div class="w-[16px] h-[16px] bg-[url('/images/profile-2user.png')]">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 @endauth
-                    <div class="big-div fixed top-0 left-0 w-full h-full" id="shadowDiv" style="background-color: rgba(0, 0, 0, 0.16); display: none;">
+                    <div class="big-div fixed top-0 left-0 w-full h-full" id="shadowDiv" style="z-index: 2; background-color: rgba(0, 0, 0, 0.16); display: none;">
                         <!-- Content to overlay -->
                     </div>
                 <div style="margin-top: 62px;" id="darkening">
@@ -80,14 +80,11 @@
                     buttonShow.style.display = 'none';
                     buttonHide.style.display = 'block';
                     shadowDiv.style.display = 'block';
-                    disableScroll();
-                    // darkenElements()
                 } else {
                     sidebar.style.display = 'none';
                     buttonShow.style.display = 'block';
                     buttonHide.style.display = 'none';
                     shadowDiv.style.display = 'none';
-                    enableScroll();
                 }
             }
 
@@ -121,31 +118,6 @@
                 var pageTitleSpan = document.getElementById('pageTitle');
                 pageTitleSpan.textContent = title;
             }
-
-            function disableScroll() {
-                document.body.style.overflow = 'hidden';
-            }
-
-            function enableScroll() {
-                document.body.style.overflow = 'auto';
-            }
-
-            // function darkenElements() {
-            //     // Находим элемент с id="darkening"
-            //     const darkeningElement = document.getElementById('darkening');
-            //
-            //     // Проверяем, найден ли элемент с id="darkening"
-            //     if (darkeningElement) {
-            //         // Находим всех потомков элемента с id="darkening"
-            //         const elementsToDarken = darkeningElement.querySelectorAll('*');
-            //
-            //         // Проходимся по каждому потомку
-            //         elementsToDarken.forEach(element => {
-            //             // Затемняем элемент
-            //             element.style.backgroundColor = 'rgba(0, 0, 0, 0.16)'; // Черный цвет с непрозрачностью 16%
-            //         });
-            //     }
-            // }
         </script>
         @vite('resources/js/app.js')
         @livewireScripts
