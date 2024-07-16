@@ -1,4 +1,4 @@
-<div class="big-div">
+<div>
     @if (!$showForm)
         <div class="w-[344px] h-[212px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[26px]">
             <div class="flex flex-col mt-[32px] ml-[24px]">

@@ -1,4 +1,4 @@
-<div class="big-div">
+<div>
     @if ($step === 1)
         <div class="bg-white rounded-[28px] w-[344px] h-[293px] mt-[253px] mb-[254px] border-[1px] border-sc-border">
                <div class="flex flex-row">

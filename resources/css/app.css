@@ -17,7 +17,7 @@
     }
 }
 .big-div {
-    @apply bg-sc-main-font pt-[66px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat;
+    @apply bg-sc-main-font pt-[46px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat;
 }
 .semi-div {
     @apply bg-white rounded-[28px] h-[668px] w-[344px];

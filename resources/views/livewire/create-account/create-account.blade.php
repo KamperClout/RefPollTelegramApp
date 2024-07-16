@@ -1,4 +1,4 @@
-<div class="big-div">
+<div>
     <div class="semi-div">
         <div class="flex flex-col border-[1px] border-sc-border pb-[8px] h-[668px]">
             <div class="flex flex-row">
