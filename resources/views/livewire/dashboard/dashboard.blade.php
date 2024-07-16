@@ -13,6 +13,23 @@
             <button class="w-[40px] h-[40px] bg-[url('/images/down.png')] ml-[140px] mt-[19px]"></button>
         </div>
     </div>
+{{--    тут нужен скрол--}}
+    <div class="flex flex-row">
+        <div class="flex flex row">
+            <div class="w-[40px] h-[40px] bg-white rounded-[12px] border-[1px] border-sc-border p-[12px]">
+                <div class="w-[16px] h-[16px] bg-[url('/images/presention-chart.png')]"> </div>
+            </div>
+            <span class="ml-[16px] mt-[10px]"> Статистика </span>
+        </div>
+        {{--    тут нужен ml-[38px]--}}
+        <div class="flex flex row ml-[18px]">
+            <div class="w-[40px] h-[40px] bg-white rounded-[12px] border-[1px] border-sc-border p-[12px]">
+                <div class="w-[16px] h-[16px] bg-[url('/images/document-text.png')]"> </div>
+            </div>
+            <span class="ml-[16px] mt-[10px]"> Выписки и справки </span>
+        </div>
+    </div>
+    <div class="mt-[] bg-"> </div>
     <div>
         <select wire:model="sortSelected" wire:change="sortBy()">
             <option value="createdAt asc">Последние Транзакции</option>
