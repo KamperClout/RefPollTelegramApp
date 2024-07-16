@@ -1,5 +1,5 @@
 <div>
-    @if ($showForm)
+    @if (!$showForm)
         <div class="w-[344px] h-[212px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[16px]">
             <div class="flex flex-col mt-[32px] ml-[24px]">
                 <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Мои </span>
