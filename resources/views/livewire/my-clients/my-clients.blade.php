@@ -19,19 +19,21 @@
         <div class="w-[344px] h-[450px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border flex flex-col mt-[8px]">
             <div class="fixed top-[352px] left-[29px] w-[16px] h-[16px] bg-[url('/images/search-normal.png')]"> </div>
             <input type="text" wire:model.lazy="search" class="w-[328px] h-[40px] border rounded-[12px] mt-[8px] ml-[8px] bg-sc-form-back mb-[4px]" placeholder=""/>
-            @foreach($clients as $client)
-                @if (!$client->is_payment)
-                    <div class="w-[328px] h-[64px] bg-white rounded-[20px] mt-[4px] border-[1px] border-sc-border border-opacity-80 ml-[8px] flex flex-row">
-                        <div class="w-[48px] h-[48px] bg-white rounded-[12px] border-[1px] border-sc-border ml-[8px] mt-[8px] pl-[17px] pt-[10px]">
-                            {{ $loop->iteration }}
+            <div class="client-list-container" style="max-height: 410px; overflow-y: auto;">
+                @foreach($clients as $client)
+                    @if (!$client->is_payment)
+                        <div class="w-[328px] h-[64px] bg-white rounded-[20px] mt-[4px] border-[1px] border-sc-border border-opacity-80 ml-[8px] flex flex-row">
+                            <div class="w-[48px] h-[48px] bg-white rounded-[12px] border-[1px] border-sc-border ml-[8px] mt-[8px] pl-[17px] pt-[10px]">
+                                {{ $loop->iteration }}
+                            </div>
+                            <div class="flex flex-col ml-[16px] mt-[9px]">
+                                <span class="text-sc-almost-black text-[13px] font-Montserrat font-medium">{{ $client->surname }} {{ $client->name }}</span>
+                                <span class="text-sc-check">{{ $client->phone }}</span>
+                            </div>
                         </div>
-                        <div class="flex flex-col ml-[16px] mt-[9px]">
-                            <span class="text-sc-almost-black text-[13px] font-Montserrat font-medium"> {{ $client->surname}} {{ $client->name }}</span>
-                            <span class="text-sc-check">  {{ $client->phone }} </span>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
+                    @endif
+                @endforeach
+            </div>
             <button wire:click="openForm" class="w-[64px] h-[64px] rounded-[20px] fixed top-[720px] left-[280px] bg-sc-yellow text-sc-almost-black text-[36px]">
                 +
             </button>
@@ -54,8 +56,8 @@
                         <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Новый </span>
                         <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Клиент </span>
                     </div>
-                    <div class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px]">
-                        <button wire:click="closeForm"></button>
+                    <div class="">
+                        <button class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px]" wire:click="closeForm"></button>
                     </div>
                 </div>
                 <div class=" w-[328px] h-[247px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[15px]">
@@ -108,33 +110,31 @@
                     <span class="font-Montserrat font-medium text-sc-almost-black mb-[8px] ml-[7px]"> Сумма долга</span>
                     <div class="flex flex-row">
                         <div class="flex flex-col">
-                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]">
-                                <input wire:model="form.debt_amount" class="ml-[43px] mt-[11px]" id="radio-1" type="radio" name="radio" value="< 100 т. р." checked>
-                                <label for="radio-1" class="text-sc-gray-text"> < 100 т. р.</label>
+                            <div class="form_radio_btn">
+                                <input wire:model="form.debt_amount" id="radio-1" type="radio" name="radio" value="< 100 т. р.">
+                                <label for="radio-1">< 100 т. р.</label>
                             </div>
-                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]">
-                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-3" type="radio" name="radio" value="200 - 300 т. р.">
-                                <label for="radio-3" class="text-sc-gray-text">200 - 300 т. р.</label>
+                            <div class="form_radio_btn">
+                                <input wire:model="form.debt_amount" id="radio-3" type="radio" name="radio" value="200 - 300 т. р.">
+                                <label for="radio-3">200 - 300 т. р.</label>
                             </div>
-                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px]">
-                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-5" type="radio" name="radio" value="400 - 500 т. р.">
-                                <label for="radio-5" class="text-sc-gray-text">400 - 500 т. р.</label>
+                            <div class="form_radio_btn">
+                                <input wire:model="form.debt_amount" id="radio-5" type="radio" name="radio" value="400 - 500 т. р.">
+                                <label for="radio-5">400 - 500 т. р.</label>
                             </div>
                         </div>
                         <div class="flex flex-col">
-                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px] ml-[4px]">
-                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-2" type="radio" name="radio" value="100 - 200 т. р.">
-                                <label for="radio-2" class="text-sc-gray-text">100 - 200 т. р.</label>
+                            <div class="form_radio_btn">
+                                <input wire:model="form.debt_amount" id="radio-2" type="radio" name="radio" value="100 - 200 т. р.">
+                                <label for="radio-2">100 - 200 т. р.</label>
                             </div>
-
-                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px] ml-[4px]">
-                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-4" type="radio" name="radio" value="300 - 400 т. р.">
-                                <label for="radio-4" class="text-sc-gray-text">300 - 400 т. р.</label>
+                            <div class="form_radio_btn">
+                                <input wire:model="form.debt_amount" id="radio-4" type="radio" name="radio" value="300 - 400 т. р.">
+                                <label for="radio-4">300 - 400 т. р.</label>
                             </div>
-
-                            <div class="w-[154px] h-[40px] rounded-[12px] border-sc-border bg-white border-[1px] ml-[4px]">
-                                <input wire:model="form.debt_amount" class="ml-[32px] mt-[11px]" id="radio-6" type="radio" name="radio" value="> 500 т. р.">
-                                <label for="radio-6" class="text-sc-gray-text"> > 500 т. р.</label>
+                            <div class="form_radio_btn">
+                                <input wire:model="form.debt_amount" id="radio-6" type="radio" name="radio" value="> 500 т. р.">
+                                <label for="radio-6"> 500 т. р.</label>
                             </div>
                         </div>
                     </div>

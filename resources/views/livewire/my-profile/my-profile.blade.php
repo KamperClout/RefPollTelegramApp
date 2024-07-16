@@ -1,5 +1,5 @@
 <div>
-    <div class="w-[344px] h-[164px] bg-white rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[26px]">
+    <div class="w-[344px] h-[164px] bg-white rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[16px]">
         <div class="flex flex-col ml-[24px] mt-[32px]">
             <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Мой </span>
             <span class=" font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Профиль </span>

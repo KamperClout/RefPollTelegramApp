@@ -11,7 +11,7 @@
             <div class="big-div">
                 @auth
                     <div class="flex flex-col">
-                        <div class="ml-[8px] w-[328px] h-[40px] flex flex-row">
+                        <div class="w-[338px] h-[40px] flex flex-row">
                             <div id="buttonShow" class="w-[40px] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[14px] ml-[8px] cursor-pointer" onclick="toggleSidebar()">
                                 <div class="w-[12px] h-[12px] bg-[url('/images/navigation.png')]">
                                     <button class=""></button>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 @endauth
-                <div class="background-color: rgba(0, 0, 0, 0.16)">
+                <div id="darkening">
                     {{ $slot }}
                 </div>
             </div>
@@ -76,6 +76,7 @@
                     buttonShow.style.display = 'none';
                     buttonHide.style.display = 'block';
                     disableScroll();
+                    // darkenElements()
                 } else {
                     sidebar.style.display = 'none';
                     buttonShow.style.display = 'block';
@@ -122,6 +123,23 @@
             function enableScroll() {
                 document.body.style.overflow = 'auto';
             }
+
+            // function darkenElements() {
+            //     // Находим элемент с id="darkening"
+            //     const darkeningElement = document.getElementById('darkening');
+            //
+            //     // Проверяем, найден ли элемент с id="darkening"
+            //     if (darkeningElement) {
+            //         // Находим всех потомков элемента с id="darkening"
+            //         const elementsToDarken = darkeningElement.querySelectorAll('*');
+            //
+            //         // Проходимся по каждому потомку
+            //         elementsToDarken.forEach(element => {
+            //             // Затемняем элемент
+            //             element.style.backgroundColor = 'rgba(0, 0, 0, 0.16)'; // Черный цвет с непрозрачностью 16%
+            //         });
+            //     }
+            // }
         </script>
         @vite('resources/js/app.js')
         @livewireScripts

@@ -41,4 +41,29 @@
     @apply flex flex-row ml-[99px] mt-[16px] mb-[24px];
 }
 
+.form_radio_btn {
+    @apply inline-block mr-4 w-full; /* Make it inline-block and full-width */
+}
 
+.form_radio_btn input[type=radio] {
+    @apply hidden; /* Hide the radio input */
+}
+
+.form_radio_btn label {
+    @apply inline-flex items-center justify-center text-center text-sc-gray-text cursor-pointer px-4 py-2 leading-9 border border-gray-300 rounded-full select-none w-full h-10; /* Make label full-width, set height to 40px, center text, and add 1px border */
+}
+
+/* Checked state */
+.form_radio_btn input[type=radio]:checked + label {
+    @apply bg-sc-check text-white; /* Apply custom check background color and text color */
+}
+
+/* Hover state */
+.form_radio_btn label:hover {
+    @apply bg-sc-check text-white; /* Apply same styles as checked state on hover */
+}
+
+/* Disabled state */
+.form_radio_btn input[type=radio]:disabled + label {
+    @apply bg-white text-sc-gray-text cursor-not-allowed; /* Customize background and text color for disabled state */
+}
