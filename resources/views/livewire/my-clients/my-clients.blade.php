@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="w-[344px] h-[450px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border flex flex-col mt-[8px]">
-            <div class="fixed top-[332px] left-[29px] w-[16px] h-[16px] bg-[url('/images/search-normal.png')]"> </div>
+            <div class="fixed top-[352px] left-[29px] w-[16px] h-[16px] bg-[url('/images/search-normal.png')]"> </div>
             <input type="text" wire:model.lazy="search" class="w-[328px] h-[40px] border rounded-[12px] mt-[8px] ml-[8px] bg-sc-form-back mb-[4px]" placeholder=""/>
             @foreach($clients as $client)
                 @if (!$client->is_payment)
