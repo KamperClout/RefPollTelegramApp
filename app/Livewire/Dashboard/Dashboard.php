@@ -29,7 +29,7 @@ class Dashboard extends Component
                 $payments->push([
                     'name' => mb_substr($client->name, 0, 1, 'UTF-8') . '.',
                     'surname' => $client->surname,
-                    'amount' => number_format($clientPayment->amount, 2, '.', '') . ' ₽',
+                    'amount' => number_format($clientPayment->amount, 0, '.', '') . ' ₽',
                     'createdAt' => $clientPayment->created_at->toDateString(),
                 ]);
             }

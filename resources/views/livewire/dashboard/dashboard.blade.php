@@ -13,20 +13,18 @@
             <button class="w-[40px] h-[40px] bg-[url('/images/down.png')] ml-[140px] mt-[19px]"></button>
         </div>
     </div>
-{{--    тут нужен скрол--}}
-    <div class="flex flex-row mt-[23px]">
-        <div class="flex flex row">
+    <div class="flex flex-row " style="overflow-x: auto; max-height: 60px;">
+        <div class="flex flex-row items-center">
             <div class="w-[40px] h-[40px] bg-white rounded-[12px] border-[1px] border-sc-border p-[12px]">
                 <div class="w-[16px] h-[16px] bg-[url('/images/presention-chart.png')]"> </div>
             </div>
-            <span class="ml-[16px] mt-[10px]"> Статистика </span>
+            <span class="ml-[16px] mt-[10px] h-[16px]"> Статистика </span>
         </div>
-        {{--    тут нужен ml-[38px]--}}
-        <div class="flex flex row ml-[18px]">
+        <div class="flex flex-row items-center">
             <div class="w-[40px] h-[40px] bg-white rounded-[12px] border-[1px] border-sc-border p-[12px]">
                 <div class="w-[16px] h-[16px] bg-[url('/images/document-text.png')]"> </div>
             </div>
-            <span class="ml-[16px] mt-[10px]"> Выписки и справки </span>
+            <span class="ml-[16px] mt-[10px] h-[16px]"> Выписки и справки </span>
         </div>
     </div>
 
@@ -61,41 +59,44 @@
         </select>
     </div>
     <div class="w-[344px] h-[400px] bg-white bg-opacity-80 rounded-[28px] border-[1px] border-sc-border flex flex-col">
-        @foreach ($paymentDTOs as $date => $payments)
-            <div>
-                <div class="text-[14px] font-Montserrat font-semibold text-sc-almost-black mt-[16px] ml-[16px]">
-                    {{ $formatDate($date) }}
+        <div style="max-height: 410px; overflow-y: auto;">
+            @foreach ($paymentDTOs as $date => $payments)
+                <div>
+                    <div class="text-[14px] font-Montserrat font-semibold text-sc-almost-black mt-[16px] ml-[16px]">
+                        {{ $formatDate($date) }}
+                    </div>
+
+                    @foreach ($payments as $index => $payment)
+                        @if ($loop->first || $loop->last)
+                            <div class="w-[328px] h-[70px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border mt-[4px]">
+                                <div class="flex flex-row w-[312px] h-[40px] bg-sc-check rounded-[12px] mt-[19px]">
+                                    <div class="text-white ml-[22px] mt-[11px]">
+                                        {{ $payment['surname'] }} {{ $payment['name'] }}
+                                    </div>
+                                    <div class="bg-white text-sc-check w-[92px] h-[30px] rounded-[8px] ml-[100px] mt-[5px] pl-[3px] pt-[3px]">
+                                        {{'+ ' . $payment['amount'] }}
+                                    </div>
+                                </div>
+
+                            </div>
+                        @else
+                            <div class="w-[328px] h-[70px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border mt-[4px]">
+                                <div class="flex flex-row w-[312px] h-[40px] bg-white border-sc-scroll rounded-[12px]  mt-[19px]">
+                                    <div  class="text-sc-gray-text ml-[22px] mt-[11px] flex flex-row">
+                                        {{ $payment['surname'] }}
+                                        {{ $payment['name'] }}
+                                    </div>
+                                    <div class="border-sc-scroll bg-white border-[1px] text-sc-gray-text w-[92px] h-[30px] rounded-[8px] ml-[100px] pl-[3px] pt-[3px]">
+                                        {{ $payment['amount'] }}
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
+            @endforeach
+        </div>
 
-                @foreach ($payments as $index => $payment)
-                    @if ($loop->first || $loop->last)
-                        <div class="w-[328px] h-[70px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border mt-[4px]">
-                            <div class="flex flex-row w-[312px] h-[40px] bg-sc-check rounded-[12px] mt-[19px]">
-                                <div class="text-white ml-[22px] mt-[11px]">
-                                    {{ $payment['surname'] }} {{ $payment['name'] }}
-                                </div>
-                                <div class="bg-white text-sc-check w-[92px] h-[30px] rounded-[8px] ml-[100px] mt-[5px] pl-[3px] pt-[3px]">
-                                    {{'+ ' . $payment['amount'] }}
-                                </div>
-                            </div>
-
-                        </div>
-                    @else
-                        <div class="w-[328px] h-[70px] bg-white bg-opacity-80 rounded-[20px] border-[1px] border-sc-border mt-[4px]">
-                            <div class="flex flex-row w-[312px] h-[40px] bg-white border-sc-scroll rounded-[12px]  mt-[19px]">
-                                <div  class="text-sc-gray-text ml-[22px] mt-[11px] flex flex-row">
-                                    {{ $payment['surname'] }}
-                                    {{ $payment['name'] }}
-                                </div>
-                                <div class="border-sc-scroll bg-white border-[1px] text-sc-gray-text w-[92px] h-[30px] rounded-[8px] ml-[100px] pl-[3px] pt-[3px]">
-                                    {{ $payment['amount'] }}
-                                </div>
-                            </div>
-
-                        </div>
-                    @endif
-                @endforeach
-            </div>
-        @endforeach
     </div>
 </div>
