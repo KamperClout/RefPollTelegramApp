@@ -14,13 +14,13 @@
         </div>
     </div>
     <div class="flex flex-row " style="overflow-x: auto; max-height: 60px;">
-        <div class="flex flex-row items-center">
+        <div class="flex">
             <div class="w-[40px] h-[40px] bg-white rounded-[12px] border-[1px] border-sc-border p-[12px]">
                 <div class="w-[16px] h-[16px] bg-[url('/images/presention-chart.png')]"> </div>
             </div>
             <span class="ml-[16px] mt-[10px] h-[16px]"> Статистика </span>
         </div>
-        <div class="flex flex-row items-center">
+        <div class="flex">
             <div class="w-[40px] h-[40px] bg-white rounded-[12px] border-[1px] border-sc-border p-[12px]">
                 <div class="w-[16px] h-[16px] bg-[url('/images/document-text.png')]"> </div>
             </div>
