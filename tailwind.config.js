@@ -26,7 +26,8 @@ module.exports = {
                     'border': '#ECECEC',
                     'check': '#71B670',
                     'shadow': '#A5ADA9',
-                    'almost-black': "#252838"
+                    'almost-black': "#252838",
+                    'scroll': '#F0F0F0'
                 }
             },
             spacing: {
