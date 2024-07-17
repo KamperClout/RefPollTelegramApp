@@ -58,8 +58,8 @@
                         h-[20px] w-[30px]
                         cursor-pointer
                         rounded-[8px]
-                        border-sc-check
-                        bg-sc-check
+                        border-sc-border
+                        bg-sc-border
                         after:absolute
                         after:-top-[-4px]
                         after:-left-[-4px]
@@ -71,6 +71,7 @@
                         after:border-white
                         after transition-all
                         after:bg-white
+                        checked:bg-sc-check
                         checked:border-sc-check
                         checked:after:translate-x-[10px]
                         checked:after:border-white">

@@ -60,7 +60,7 @@
 
 /* Hover state */
 .form_radio_btn label:hover {
-    @apply bg-sc-check text-white; /* Apply same styles as checked state on hover */
+    @apply bg-sc-check text-white rounded-[12px]; /* Apply same styles as checked state on hover */
 }
 
 /* Disabled state */
@@ -82,4 +82,7 @@
 
 .search-field:focus + .search-icon {
     /* styles for the icon when field is focused */
+}
+.error {
+    @apply text-[15px];
 }
