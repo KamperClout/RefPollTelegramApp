@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TelegramController;
 use App\Livewire\CreateAccount\CreateAccount;
 use App\Livewire\Dashboard\Dashboard;
 use App\Livewire\EntranceAccount\EntranceAccount;
@@ -37,3 +38,5 @@ Route::middleware(['guest'])->group(function () {
 
     Route::get('/recovery',RecoveryAccount::class)->name('recovery');
 });
+
+Route::post('/telegram/webhook', [TelegramController::class, 'webhook']);
