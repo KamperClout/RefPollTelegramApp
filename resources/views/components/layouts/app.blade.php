@@ -6,9 +6,8 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         @vite('resources/css/app.css')
     </head>
-    <body>
-        <div class="flex-grow">
-            <div class="big-div ">
+    <body class="bg-slate-300">
+        <div class="bg-slate-300">
                 @auth
                     <div class="flex flex-col" style="position: absolute; z-index: 8; top: 46px;">
                         <div class="w-[338px] h-[40px] flex flex-row">
@@ -63,12 +62,11 @@
                     <div class="big-div fixed top-0 left-0 w-full h-full" id="shadowDiv" style="z-index: 2; background-color: rgba(0, 0, 0, 0.16); display: none;">
                         <!-- Content to overlay -->
                     </div>
-                <div style="margin-top: 62px;" id="darkening">
+                <div class="flex content-center justify-center items-center h-[80vh]"  id="darkening">
                     {{ $slot }}
                 </div>
             </div>
 
-        </div>
         <script>
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
