@@ -35,7 +35,7 @@
     @apply bg-sc-yellow mt-[20px] rounded-[20px] w-[328px] h-[64px] text-sc-almost-black font-MontserratBold;
 }
 .checkbox {
-    @apply flex flex-row bg-white mt-[19.26px] ml-[24px] h-[20px];
+    @apply flex flex-row bg-white h-[20px];
 }
 .exist {
     @apply flex flex-row ml-[99px] mt-[16px] mb-[24px];
