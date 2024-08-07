@@ -5,16 +5,16 @@
             <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунт </span>
         </div>
         @if (session()->has('success'))
-            <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">
+            <div class="bg-green-200 text-green-800 p-2 rounded">
                 {{ session('success') }}
             </div>
         @endif
         @if (session()->has('error'))
-            <div class="bg-red-200 text-red-800 p-2 mb-4 rounded">
+            <div class="bg-red-200 text-red-800 p-2 rounded">
                 {{ session('error') }}
             </div>
         @endif
-        <form wire:submit="login" class="bg-white ml-8 mr-8 mt-24 ">
+        <form wire:submit="login" class="bg-white ml-8 mr-8">
             <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px] border-opacity-80">
                 <div class="form-div">
                     <span class="form-span"> Номер телефона </span>
@@ -56,7 +56,9 @@
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
             </div>
-            <input class="button cursor-pointer" type="submit" value="Войти">
+            <div class="grid grid-cols-4 col-span-[8px] w-[328px]">
+                <input class="bg-sc-yellow mt-[20px] rounded-[20px] h-[64px] grid-start-1 grid-end-4 text-sc-almost-black font-MontserratBold cursor-pointer" type="submit" value="Войти">
+            </div>
         </form>
         <div class="flex flex-row ml-[63px] mt-[16px] mb-[24px]">
                 <span class="text-sc-gray-text"> Нет аккаунта?

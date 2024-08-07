@@ -31,9 +31,9 @@
 .form-div {
     @apply flex flex-col mt-[16px] ml-[8px] mr-[8px] h-[63px] size-[15.02];
 }
-.button {
-    @apply bg-sc-yellow mt-[20px] rounded-[20px] w-[328px] h-[64px] text-sc-almost-black font-MontserratBold;
-}
+/*.button {*/
+/*    @apply ;*/
+/*}*/
 .checkbox {
     @apply flex flex-row h-2;
 }
