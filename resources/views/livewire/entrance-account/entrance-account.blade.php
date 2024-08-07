@@ -1,4 +1,4 @@
-<div>
+
     <div class="bg-white rounded-[28px] w-full border-[1px] border-sc-border">
         <div class="flex flex-col mt-[24px] ml-[24px]">
             <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Войти в </span>
@@ -26,7 +26,10 @@
                     <input wire:model="password" type="password" class="form-input" name="password" placeholder="Пароль" required />
                     @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
-                <a href="/recovery" class="text-sc-check font-Montserrat w-[104px] h-[15px] mt-[8px] mb-[16px] flex-nowrap">Забыли пароль?</a>
+                <div class="">
+                    <a href="/recovery" class="text-sc-check font-Montserrat h-[15px]">Забыли пароль?</a>
+                </div>
+
             </div>
             <div class="checkbox">
                 <span for="newsletter">Оставаться в системе</span>
@@ -58,10 +61,10 @@
             </div>
             <input class="bg-sc-yellow w-full mt-[20px] rounded-[20px] h-[64px] text-sc-almost-black font-MontserratBold cursor-pointer" type="submit" value="Войти">
         </form>
-        <div class="flex flex-row ml-[63px] mt-[16px] mb-[24px]">
+        <div class="flex flex-row mt-[16px] mb-[24px] w-full justify-center">
                 <span class="text-sc-gray-text"> Нет аккаунта?
                 <a href="/register" class="text-sc-check font-Montserrat"> Зарегистрируйтесь</a>
                 </span>
         </div>
     </div>
-</div>
+

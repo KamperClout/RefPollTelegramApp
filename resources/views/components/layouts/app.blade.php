@@ -6,8 +6,8 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         @vite('resources/css/app.css')
     </head>
-    <body class="bg-slate-300">
-        <div class="bg-slate-300">
+    <body class="bg-slate-300 flex content-center justify-center items-center w-full">
+        <div class="bg-slate-300 flex content-center justify-center items-center w-full">
                 @auth
                     <div class="flex flex-col" style="position: absolute; z-index: 8; top: 46px;">
                         <div class="w-[338px] h-[40px] flex flex-row">
