@@ -32,7 +32,6 @@
             </div>
             <div class="checkbox">
                 <span for="newsletter">Оставаться в системе</span>
-                <div class="">
                     <input wire:model="remember" type="checkbox"
                            class="
                         relative
@@ -58,7 +57,6 @@
                         checked:border-sc-check
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
-                </div>
             </div>
             <input class="bg-sc-yellow w-full mt-[20px] rounded-[20px] h-[64px] text-sc-almost-black font-MontserratBold cursor-pointer" type="submit" value="Войти">
         </form>
