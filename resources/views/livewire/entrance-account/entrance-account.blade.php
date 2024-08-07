@@ -26,15 +26,15 @@
                     <input wire:model="password" type="password" class="form-input" name="password" placeholder="Пароль" required />
                     @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
-                <div class="">
-                    <a href="/recovery" class="text-sc-check font-Montserrat h-[15px]">Забыли пароль?</a>
+                <div class="flex justify-end pr-[8px]">
+                    <a href="/recovery" class="text-sc-check font-Montserrat h-[15px] ">Забыли пароль?</a>
                 </div>
-
             </div>
             <div class="checkbox">
                 <span for="newsletter">Оставаться в системе</span>
-                <input wire:model="remember" type="checkbox"
-                       class="
+                <div class="">
+                    <input wire:model="remember" type="checkbox"
+                           class="
                         relative
                         appearance-none
                         inline block
@@ -58,6 +58,7 @@
                         checked:border-sc-check
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
+                </div>
             </div>
             <input class="bg-sc-yellow w-full mt-[20px] rounded-[20px] h-[64px] text-sc-almost-black font-MontserratBold cursor-pointer" type="submit" value="Войти">
         </form>
