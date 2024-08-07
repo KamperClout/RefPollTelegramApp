@@ -1,5 +1,5 @@
 <div>
-    <div class="bg-white rounded-[28px] w-[344px] border-[1px] border-sc-border">
+    <div class="bg-white rounded-[28px] w-full border-[1px] border-sc-border">
         <div class="flex flex-col mt-[24px] ml-[24px]">
             <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Войти в </span>
             <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунт </span>
