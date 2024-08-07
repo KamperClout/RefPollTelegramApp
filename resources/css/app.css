@@ -35,7 +35,7 @@
 /*    @apply ;*/
 /*}*/
 .checkbox {
-    @apply flex flex-row h-2;
+    @apply flex flex-row min-h-0;
 }
 .exist {
     @apply flex flex-row ml-[99px] mt-[16px] mb-[24px];

@@ -56,9 +56,7 @@
                         checked:after:translate-x-[10px]
                         checked:after:border-white">
             </div>
-            <div class="grid grid-cols-4 col-span-[8px] w-[328px]">
-                <input class="bg-sc-yellow mt-[20px] rounded-[20px] h-[64px] grid-start-1 grid-end-4 text-sc-almost-black font-MontserratBold cursor-pointer" type="submit" value="Войти">
-            </div>
+            <input class="bg-sc-yellow w-full mt-[20px] rounded-[20px] h-[64px] text-sc-almost-black font-MontserratBold cursor-pointer" type="submit" value="Войти">
         </form>
         <div class="flex flex-row ml-[63px] mt-[16px] mb-[24px]">
                 <span class="text-sc-gray-text"> Нет аккаунта?
