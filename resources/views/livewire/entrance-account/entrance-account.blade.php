@@ -1,5 +1,5 @@
 <div>
-    <div class="bg-white rounded-[28px] w-[344px] h-[466px] border-[1px] border-sc-border">
+    <div class="bg-white rounded-[28px] w-[344px] border-[1px] border-sc-border">
         <div class="flex flex-col mt-[24px] ml-[24px]">
             <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Войти в </span>
             <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунт </span>
@@ -26,12 +26,12 @@
                     <input wire:model="password" type="password" class="form-input" name="password" placeholder="Пароль" required />
                     @error('password') <span class="error">{{ $message }}</span> @enderror
                 </div>
-                <a href="/recovery" class="text-sc-check font-Montserrat w-[104px] h-[15px] ml-[208px] mt-[8px] mb-[16px]">Забыли пароль?</a>
+                <a href="/recovery" class="text-sc-check font-Montserrat w-[104px] h-[15px] mt-[8px] mb-[16px] flex-nowrap">Забыли пароль?</a>
             </div>
             <div class="checkbox">
                 <span for="newsletter">Оставаться в системе</span>
                 <input wire:model="remember" type="checkbox"
-                       class="ml-[117px]
+                       class="
                         relative
                         appearance-none
                         inline block
