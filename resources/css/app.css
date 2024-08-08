@@ -19,9 +19,9 @@
 .big-div {
     @apply bg-sc-main-font pt-[46px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat;
 }
-.semi-div {
-    @apply  h-[668px] w-[344px];
-}
+/*.semi-div {*/
+/*    @apply  h-[668px] w-[344px];*/
+/*}*/
 .form-input{
     @apply bg-sc-form-back text-sc-gray-text rounded-[12px] h-[40.06px] pl-[15px];
 }
@@ -38,7 +38,7 @@
     @apply flex flex-row min-h-0 w-full mt-[2px];
 }
 .exist {
-    @apply flex flex-row ml-[99px] mt-[16px] mb-[24px];
+    @apply flex justify-center mt-[16px];
 }
 
 .form_radio_btn {

@@ -1,11 +1,11 @@
 <div class="h-[80vh] bg-white rounded-[28px] w-full">
-    <div class="flex flex-col border-[1px] border-sc-border rounded-[28px] pb-[8px] h-[80vh]">
+    <div class="h-[80vh] flex flex-col border-[1px] border-sc-border rounded-[28px] pb-[8px]">
         <div class="flex flex-row">
             <div class="flex flex-col mt-[24px] ml-[24px]">
                 <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Регистрация </span>
                 <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунта </span>
             </div>
-            <div wire:click="redirectToLogin" class="w-[23px] h-[23px] bg-[url('/images/exit.png')] ml-[170px] mt-[32px] cursor-pointer">
+            <div wire:click="redirectToLogin" class="w-[23px] h-[23px] bg-[url('/images/exit.png')] place-self-start mt-[32px] cursor-pointer">
                 <button class=""></button>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 {{ session('error') }}
             </div>
         @endif
-        <form wire:submit="store" class="bg-white ml-8 mr-8 ">
+        <form wire:submit="store" class="bg-white ml-8 mr-8">
             <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px] border-opacity-80">
                 <div class="form-div">
                     <span class="form-span"> Ваше ФИО </span>
@@ -77,7 +77,7 @@
             </div>
             <input class="bg-sc-yellow w-full mt-[20px] rounded-[20px] h-[64px] cursor-pointer" type="submit" value="Зарегистрироваться">
         </form>
-        <div class="exist">
+        <div class="exist h-[80vh] w-full">
             <span class="text-sc-gray-text"> Есть аккаунт?
             <a href="/login" class="text-sc-check font-Montserrat"> Войдите</a>
             </span>
