@@ -6,11 +6,11 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         @vite('resources/css/app.css')
     </head>
-    <body class="bg-slate-300 w-full pl-[8px] pr-[8px]">
-        <div class="bg-slate-300 w-full">
+    <body class="bg-slate-300 h-full w-full p-[8px] justify-items-center">
+        <div class="bg-slate-300 w-full h-full justify-items-center">
                 @auth
-                    <div class="flex flex-col" style="position: absolute; z-index: 8; top: 46px;">
-                        <div class="w-[338px] h-[40px] flex flex-row">
+                    <div class="flex flex-col justify-items-center" style="position: absolute; z-index: 8; top: 46px;">
+                        <div class=" flex flex-row">
                             <div id="buttonShow" class="w-[40px] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[14px] ml-[8px] cursor-pointer" onclick="toggleSidebar()">
                                 <div class="w-[12px] h-[12px] bg-[url('/images/navigation.png')]">
                                     <button class=""></button>
@@ -31,8 +31,8 @@
                                 </div>
                             </form>
                         </div>
-                        <div id="sidebar" class="absolute w-[344px] h-[192px] bg-white rounded-[28px] border-[1px] border-sc-border" style="display: none; top: 62px;">
-                            <a href="/my-clients" class="flex flex-row w-[328px] h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[8px] pl-[8px] pt-[8px]">
+                        <div id="sidebar" class="absolute w-full h-[192px] bg-white rounded-[28px] border-[1px] border-sc-border" style="display: none; top: 62px;">
+                            <a href="/my-clients" class="flex flex-row w-full h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[8px] pl-[8px] pt-[8px]">
                                 <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
                                     <div class="w-[16px] h-[16px] bg-[url('/images/profile-2user.png')]">
                                         <button class=""></button>
@@ -40,7 +40,7 @@
                                 </div>
                                 <span class="ml-[16px] mt-[7px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Мои Клиенты </span>
                             </a>
-                            <a href="/" class="flex flex-row w-[328px] h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
+                            <a href="/" class="flex flex-row w-full h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
                                 <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
                                     <div class="w-[16px] h-[16px] bg-[url('/images/dollar-square.png')]">
                                         <button class=""></button>
@@ -48,7 +48,7 @@
                                 </div>
                                 <span class="ml-[16px] mt-[7px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Мои Выплаты </span>
                             </a>
-                            <a href="/my-profile" class="flex flex-row w-[328px] h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
+                            <a href="/my-profile" class="flex flex-row w-full h-[56px] rounded-[12px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
                                 <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
                                     <div class="w-[16px] h-[16px] bg-[url('/images/personalcard.png')]">
                                         <button class=""></button>
@@ -59,8 +59,8 @@
                         </div>
                     </div>
                 @endauth
-                    <div class="big-div fixed top-0 left-0 w-full h-full" id="shadowDiv" style="z-index: 2; background-color: rgba(0, 0, 0, 0.16); display: none;">
-                        <!-- Content to overlay -->
+                    <div class="bg-sc-main-font fixed top-0 left-0 w-full h-full" id="shadowDiv" style="z-index: 2; background-color: rgba(0, 0, 0, 0.16); display: none;">
+                        <!-- тень -->
                     </div>
                 <div class="flex content-center justify-center items-center h-[80vh]"  id="darkening">
                     {{ $slot }}

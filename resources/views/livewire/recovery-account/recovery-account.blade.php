@@ -1,6 +1,6 @@
 <div>
     @if ($step === 1)
-        <div class="bg-white rounded-[28px] w-[344px] h-[293px] mt-[253px] mb-[254px] border-[1px] border-sc-border">
+        <div class="bg-white rounded-[28px] w-full h-[293px] mt-[253px] mb-[254px] border-[1px] border-sc-border">
                <div class="flex flex-row">
                    <div class="flex flex-col mt-[24px] ml-[24px]">
                        <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Восстановление </span>
@@ -20,7 +20,7 @@
                     {{ session('error') }}
                 </div>
             @endif
-            <form wire:submit.prevent="sendSms" class="bg-white ml-8 mr-8 mt-24 ">
+            <form wire:submit.prevent="sendSms" class="bg-white ml-8 mr-8 ">
                 <div class="rounded-[20px] border-[1px] border-sc-border pb-[8px] border-opacity-80">
                     <div class="flex flex-col mt-[24px] ml-[8px] mr-[8px] size-[15.02]">
                         <span class="form-span"> Номер телефона </span>
