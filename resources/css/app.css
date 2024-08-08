@@ -20,7 +20,7 @@
     @apply bg-sc-main-font pt-[46px] pr-[8px] pb-[24px] pl-[8px] max-w-screen-Android h-[800px] rounded-[36px] font-Montserrat;
 }
 .semi-div {
-    @apply bg-white rounded-[28px] h-[668px] w-[344px];
+    @apply  h-[668px] w-[344px];
 }
 .form-input{
     @apply bg-sc-form-back text-sc-gray-text rounded-[12px] h-[40.06px] pl-[15px];
