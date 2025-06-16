@@ -1,8 +1,9 @@
 module.exports = {
     content: [
-        './resources/**/*.blade.php',
+        './resources/views/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        './node_modules/flowbite/**/*.js',
     ],
     theme: {
         fontSize: {
@@ -16,6 +17,11 @@ module.exports = {
         extend: {
             colors: {
                 'sc': {
+                    'white-32': 'rgba(255, 255, 255, 0.40)',
+                    'white-72': 'rgba(255, 255, 255, 0.72)',
+                    'green-32': 'rgba(113, 182, 112, 0.40)',
+                    'green-62': 'rgba(113, 182, 112, 0.70)',
+                    'stroke-32': 'rgba(240, 240, 240, 70)',
                     'main-font': '#E7EAF2',
                     'font': '#B1B4BE',
                     'button': '#EFEFEF',
@@ -43,5 +49,7 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('flowbite/plugin')
+    ],
 }

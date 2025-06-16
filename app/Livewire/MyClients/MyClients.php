@@ -3,12 +3,16 @@
 namespace App\Livewire\MyClients;
 
 use App\Livewire\Forms\ClientForm;
+use App\Models\AnsweredAnketa;
 use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class MyClients extends Component
 {
+    use WithPagination;
+
     public ClientForm $form;
     public $search = '';
     public $clients;
@@ -16,14 +20,17 @@ class MyClients extends Component
     public $unpaidCount = 0;
     public $showForm = false;
 
+    public $id;
+
+
     public function addClient()
     {
-        $user = Auth::user();
-        $this->form->addClient($user->id);
-        $query = Client::where('user_id', $user->id);
-        $this->clients = $query->get();
-        $this->paidCount = Client::where('user_id', $user->id)->where('is_payment', true)->count();
-        $this->unpaidCount = Client::where('user_id', $user->id)->where('is_payment', false)->count();
+        // $user = Auth::user();
+        // $this->form->addClient($user->id);
+        // $query = Client::where('user_id', $user->id);
+        // $this->clients = $query->get();
+        // $this->paidCount = Client::where('user_id', $user->id)->where('is_payment', true)->count();
+//$this->unpaidCount = Client::where('user_id', $user->id)->where('is_payment', false)->count();
     }
 
     public function openForm()
@@ -37,24 +44,29 @@ class MyClients extends Component
         $this->showForm = false;
     }
 
+    public function mount()
+    {
+        $this->id = session()->get('agent_id');
+
+    }
+
     public function render()
     {
-        $user = Auth::user();
-        $query = Client::where('user_id', $user->id);
+        $answeredAnketas = AnsweredAnketa::where("agent_id", $this->id)
+            ->orderByDesc('created_at')
+            ->paginate(10);
 
-        if (!empty($this->search)) {
-            $query->where(function($q) {
-                $q->where('phone', 'like', '%' . $this->search . '%');
-            });
-        }
-
-        $this->clients = $query->get();
-        $this->paidCount = Client::where('user_id', $user->id)->where('is_payment', true)->count();
-        $this->unpaidCount = Client::where('user_id', $user->id)->where('is_payment', false)->count();
         return view('livewire.my-clients.my-clients', [
-            'clients' => $this->clients,
-            'paidCount' => $this->paidCount,
-            'unpaidCount' => $this->unpaidCount,
-            'userId' => $user->id,]);
+            'answeredAnketas' => $answeredAnketas
+        ]);
     }
+
+    // $this->clients = $query->get();
+    // $this->paidCount = Client::where('user_id', $user->id)->where('is_payment', true)->count();
+    // $this->unpaidCount = Client::where('user_id', $user->id)->where('is_payment', false)->count();
+    //  return view('livewire.my-clients.my-clients', [
+    //     'clients' => $this->clients,
+//            'unpaidCount' => $this->unpaidCount,
+    //   'userId' => $user->id,]);
+
 }

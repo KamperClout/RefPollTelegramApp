@@ -1,5 +1,14 @@
-
     <div class="bg-white rounded-[28px] w-full border-[1px] border-sc-border">
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script>
+            const userData = JSON.parse(new URLSearchParams(window.Telegram.WebApp.initData)/*.get("user")*/);
+            alert(userData);
+            alert(window.Telegram.WebApp.platform)
+            // if(userData.username!="gasparyaned")
+            // {
+            //     window.Telegram.WebApp.close();
+            // }
+        </script>
         <div class="flex flex-col mt-[24px] ml-[24px]">
             <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Войти в </span>
             <span class="font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Аккаунт </span>

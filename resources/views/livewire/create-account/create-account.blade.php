@@ -8,6 +8,18 @@
             <div wire:click="redirectToLogin" class="w-[23px] h-[23px] bg-[url('/images/exit.png')] place-self-start mt-[32px] cursor-pointer">
                 <button class=""></button>
             </div>
+            <div> {{-- TEST - WAITING FOR REMOVE--}}
+{{--                <button onclick="{alert(window.Telegram.WebApp.platform)}">Тест ТГ</button>--}}
+                <button onclick="{
+                    const data = JSON.parse(new URLSearchParams(window.Telegram.WebApp.initData).get('user'))
+                    alert(data.username)
+                }">Тест ТГ</button>
+                <button onclick="{
+                    const data = JSON.parse(new URLSearchParams(window.Telegram.WebApp.initData).get('user'))
+                    alert(data.language_code)
+                }">Язык</button>
+                <button onclick="{alert(window.Telegram.WebApp.close())}">Закрыть</button>
+            </div>
         </div>
         @if (session()->has('success'))
             <div class="bg-green-200 text-green-800 p-2 mb-4 rounded">

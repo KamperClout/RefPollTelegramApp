@@ -3,4 +3,5 @@
 @section('content')
     <livewire:dashboard/>
     <livewire:create-account/>
-@endsection
+@endsection 
+

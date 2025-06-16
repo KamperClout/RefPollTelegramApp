@@ -1,55 +1,82 @@
-<div>
-    <div class="w-[344px] h-[164px] bg-white rounded-[28px] border-[1px] border-sc-border flex flex-col mt-[16px]">
-        <div class="flex flex-col ml-[24px] mt-[32px]">
-            <span class="text-base text-[16px] font-medium font-MontserratBold text-sc-almost-black"> Мой </span>
-            <span class=" font-semibold font-MontserratBold text-[24px] text-sc-almost-black"> Профиль </span>
+<div class="bg-custom rounded-3xl p-3">
+    <div class="flex justify-between items-center mb-4">
+        <div style="line-height: 0.8;">
+            <p class="text-sc-almost-black font-medium text-[15px]">мой</p>
+            <p class="text-[24px] font-semibold text-sc-almost-black">профиль</p>
         </div>
-        <div class="text-sc-check ml-[24px] text-[24px]">
-            {{$surname . ' ' . $name . ' ' . $patronymic}}
+        <div wire:navigate
+             href="{{ route('main-page') }}" class="flex items-center justify-center gap-3 cursor-pointer relative">
+            <div class="w-10 h-10 bg-white rounded-[12px] flex items-center justify-center">
+                <img src="icons/home-2.png" alt="Главная" class="w-6 h-6"/>
+            </div>
+            {{--            <div class="w-10 h-10 bg-white rounded-[12px] flex items-center justify-center">--}}
+            {{--                <img src="icons/notification.png" alt="Настройки" class="w-6 h-6"/>--}}
+            {{--            </div>--}}
         </div>
-        @if ($test_passed)
-            <div class="h-[15px] text-sc-check font-MontserratBold text-[12px] ml-[24px] flex flex-row">
-                Тест сдан
-                <div class="w-[16px] h-[16px] ml-[4px] bg-[url('/images/discount-shape.png')]"></div>
-            </div>
-        @else
-            <div class="w-[80px] h-[15px] text-sc-almost-black font-MontserratBold text-[12px] ml-[24px]">
-                Тест не сдан
-            </div>
-        @endif
     </div>
-    <div class="mt-[8px] w-[344px] h-[252px] bg-white rounded-[28px] border-[1px] border-sc-border flex flex-col">
-        <a href="#" class="flex flex-row w-[328px] h-[56px] rounded-[20px] bg-white border-[1px] border-sc-border ml-[8px] mt-[8px] pl-[8px] pt-[8px]">
-            <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
-                <div class="w-[16px] h-[16px] bg-[url('/images/book.png')]">
-                    <button class=""></button>
+    <div class="relative">
+        <div
+            class="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-yellow-600 via-sc-check to-sc-white-32 opacity-35 blur">
+        </div>
+        <div class="relative mt-2.5 p-3 rounded-2xl bg-sc-white-72 flex flex-col">
+            <div class="flex justify-between items-center">
+                <div class="text-[24px] text-sc-almost-black font-semibold">{{$agent->name}}</div>
+                @if($agent->is_qualified)
+                <div class="flex justify-between gap-3 ">
+                    <div class="text-[16px] text-sc-almost-black">Тест сдан</div>
+                    <img src="icons/discount-shape.png" alt="галка" class="w-6 h-6"/>
                 </div>
+                @endif
             </div>
-            <span class="ml-[16px] mt-[13px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Пройти обучение </span>
-        </a>
-        <a href="#" class="flex flex-row w-[328px] h-[56px] rounded-[20px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
-            <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
-                <div class="w-[16px] h-[16px] bg-[url('/images/clipboard-tick.png')]">
-                    <button class=""></button>
+        </div>
+    </div>
+    <div class="mt-3 grid grid-cols-2 gap-2 p-1 ">
+        <div
+            class="relative flex flex-col justify-between items-center w-50 h-28 bg-white rounded-2xl p-4 text-left font-semibold text-sc-almost-black"
+            style="line-height: 1.2;">
+            <div
+                class="absolute top-4 right-3 rounded-2xl flex justify-center items-center text-center text-[12px] cursor-pointer">
+                <img src="icons/headphone.png" alt="наушники" class="w-10 h-10">
+            </div>
+            <div class="mt-auto ">Связаться с поддержкой</div>
+        </div>
+        <div
+            class="relative flex flex-col justify-between items-center w-50 h-28 bg-white rounded-2xl p-4 text-left font-semibold text-sc-almost-black"
+            style="line-height: 1.2;">
+            <div
+                class="absolute top-4 right-3 flex justify-center items-center text-center text-[12px] cursor-pointer">
+                <img src="icons/document-text.png" alt="документ" class="w-10 h-10">
+            </div>
+            <div class="mt-auto">Реквизиты самозанятого</div>
+        </div>
+        <div
+            wire:navigate
+            href="{{ route('learning')}}"
+            class="relative flex flex-col justify-between items-center w-50 h-28 bg-white rounded-2xl p-4 text-left font-semibold text-sc-almost-black cursor-pointer"
+            style="line-height: 1.2;">
+            <div class="absolute top-4 right-3 flex justify-center items-center text-center text-[12px] ">
+                <img src="icons/book.png" alt="книга" class="w-10 h-10">
+            </div>
+            <div class="mt-auto">Маркетинговые материалы</div>
+        </div>
+        <div
+            wire:navigate
+            href="{{ route('test-survey',['test' => 2])}}" class="relative cursor-pointer flex flex-col justify-between items-center w-50 h-28 bg-white rounded-2xl p-4 text-left font-semibold text-sc-almost-black"
+            style="line-height: 1.2;">
+                <div
+                    class="absolute top-4 right-3 flex justify-center items-center text-center text-[14px] cursor-pointer">
+                    <img src="icons/headphone.png" alt="наушники" class="w-10 h-10">
                 </div>
+                <div class="mt-auto">Пройти обучение и сдать тест</div>
             </div>
-            <span class="ml-[16px] mt-[13px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Пройти тест </span>
-        </a>
-        <a href="#" class="flex flex-row w-[328px] h-[56px] rounded-[20px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
-            <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
-                <div class="w-[16px] h-[16px] bg-[url('/images/document-text.png')]">
-                    <button class=""></button>
-                </div>
-            </div>
-            <span class="ml-[16px] mt-[13px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Реквизиты самозанятого </span>
-        </a>
-        <a href="#" class="flex flex-row w-[328px] h-[56px] rounded-[20px] bg-white border-[1px] border-sc-border ml-[8px] mt-[4px] pl-[8px] pt-[8px]">
-            <div class="w-[40x] h-[40px] rounded-[12px] bg-white border-[1px] border-sc-border p-[12px]">
-                <div class="w-[16px] h-[16px] bg-[url('/images/headphone.png')]">
-                    <button class=""></button>
-                </div>
-            </div>
-            <span class="ml-[16px] mt-[13px] font-[13px] font-Montserrat font-medium text-sc-almost-black"> Связаться с поддержкой </span>
-        </a>
+        </div>
+        {{--    <div class="mt-2.5 p-4 rounded-xl bg-sc-white-32 flex flex-col border-sc-border border-[2px]">--}}
+        {{--        <div class="flex justify-between items-center">--}}
+        {{--            <div class="text-[16px] text-sc-gray-text font-semibold">Выйти из аккаунта</div>--}}
+        {{--            <div class="text-[14px] text-sc-gray-text">→</div>--}}
+        {{--        </div>--}}
+        {{--    </div>--}}
     </div>
 </div>
+
+
